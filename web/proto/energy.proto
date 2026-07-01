@@ -1,0 +1,88 @@
+syntax = "proto3";
+package thermavolt.v1;
+option php_namespace = "App\\Generated\\Energy";
+option php_metadata_namespace = "App\\Generated\\Metadata";
+
+service EnergyService {
+  rpc GetState(SessionRequest) returns (Snapshot);
+  rpc SetEnvironment(EnvironmentRequest) returns (Snapshot);
+  rpc SetControls(ControlsRequest) returns (Snapshot);
+  rpc Configure(ConfigurationRequest) returns (Snapshot);
+  rpc AdvanceTime(AdvanceRequest) returns (Snapshot);
+  rpc SaveSchedule(ScheduleRequest) returns (Snapshot);
+  rpc ResetSimulation(SessionRequest) returns (Snapshot);
+}
+message SessionRequest { string token = 1; }
+message Environment {
+  string weather = 1; string lighting = 2; string unit = 3;
+}
+message Controls {
+  string home_mode = 1; string ev_mode = 2; string water_mode = 3;
+  bool export_enabled = 4; bool grid_fallback = 5;
+}
+message Configuration {
+  double home_demand = 1; double solar_capacity = 2; double battery_capacity = 3;
+  double battery_reserve = 4; double battery_max_charge = 5; double battery_max_discharge = 6;
+  double ev_capacity = 7; double ev_charge_power = 8; double ev_target = 9;
+  double water_target = 10; double grid_rate = 11; double carbon_factor = 12;
+  bool variation = 13;
+}
+message EnvironmentRequest {
+  string token = 1;
+  optional string weather = 2; optional string lighting = 3; optional string unit = 4;
+}
+message ControlsRequest {
+  string token = 1;
+  optional string home_mode = 2; optional string ev_mode = 3; optional string water_mode = 4;
+  optional bool export_enabled = 5; optional bool grid_fallback = 6;
+}
+message ConfigurationRequest {
+  string token = 1;
+  optional double home_demand = 2; optional double solar_capacity = 3;
+  optional double battery_capacity = 4; optional double battery_reserve = 5;
+  optional double battery_max_charge = 6; optional double battery_max_discharge = 7;
+  optional double ev_capacity = 8; optional double ev_charge_power = 9;
+  optional double ev_target = 10; optional double water_target = 11;
+  optional double grid_rate = 12; optional double carbon_factor = 13;
+  optional bool variation = 14; optional double battery_percent = 15;
+  optional double ev_percent = 16; optional double water_temperature = 17;
+}
+message AdvanceRequest { string token = 1; uint32 seconds = 2; }
+message ScheduleBlock {
+  string id = 1; string system = 2; string source = 3;
+  uint32 start = 4; uint32 end = 5; repeated uint32 days = 6; bool enabled = 7;
+}
+message ScheduleRequest { string token = 1; repeated ScheduleBlock blocks = 2; }
+message Telemetry {
+  double solar_available = 1; double solar_generated = 2; double solar_home = 3;
+  double solar_ev = 4; double home_demand = 5; double home_supplied = 6;
+  double ev_power = 7; double water_power = 8; double thermal_power = 9;
+  double grid_import = 10; double grid_export = 11; double battery_charge = 12;
+  double battery_discharge = 13; double curtailed = 14; double unmet_home = 15;
+  double grid_home = 16; double grid_ev = 17; double battery_percent = 18;
+  string battery_status = 19; string battery_reason = 20; string ev_status = 21;
+  string effective_ev_mode = 22; string effective_water_mode = 23;
+}
+message Reading {
+  string time = 1; double solar = 2; double home = 3; double grid = 4;
+  double battery_charge = 5; double battery_discharge = 6; double ev = 7;
+  double water_temperature = 8; double battery_percent = 9; double exported = 10;
+}
+message DailyTotals {
+  string date = 1; double solar = 2; double grid = 3; double exported = 4;
+  double home = 5; double ev = 6; double water = 7; double thermal = 8;
+  double battery_charged = 9; double battery_discharged = 10;
+  double battery_losses = 11; double curtailed = 12; double unmet = 13;
+  double savings = 14; double carbon = 15;
+}
+message Activity {
+  string id = 1; string time = 2; string title = 3; string detail = 4; string kind = 5;
+}
+message Snapshot {
+  string clock = 1; Environment environment = 2; Controls controls = 3;
+  Configuration configuration = 4; double battery_kwh = 5;
+  double ev_percent = 6; double water_temperature = 7; Telemetry telemetry = 8;
+  repeated Reading readings = 9; repeated DailyTotals daily = 10;
+  repeated Activity activity = 11; repeated ScheduleBlock schedules = 12;
+  uint32 revision = 13; string transport = 14;
+}
