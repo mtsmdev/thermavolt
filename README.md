@@ -62,8 +62,8 @@ Runtime binaries, dependencies, the private `.env` file, the SQLite database, an
 From PowerShell, with `php`, `composer`, and `npm` available on your PATH:
 
 ```powershell
-git clone https://github.com/mtsmdev/ThermaVoltFlow.git
-cd ThermaVoltFlow/web
+git clone https://github.com/mtsmdev/thermavolt.git
+cd thermavolt/web
 composer install
 npm ci
 Copy-Item .env.example .env
