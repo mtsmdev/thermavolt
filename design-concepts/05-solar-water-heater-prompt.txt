@@ -1,0 +1,13 @@
+Generator: built-in image_gen
+
+Use case: precise-object-edit / ui-mockup.
+Image 1 is the EDIT TARGET: the existing ThermaVoltFlow dark dashboard with simple 3D house, water system, and EV.
+Image 2 is a SHAPE REFERENCE ONLY for the correct solar water heater. Do not copy the brand name, rooftop setting, city, sky, photographic realism or fine detail.
+
+Primary change: replace ONLY the central water system's vertical cylinder and separate photovoltaic panel with a simple stylized 3D solar-thermal water heater shaped like image 2.
+Required recognizable geometry: one HORIZONTAL pale silver cylindrical water tank across the top, dark circular end caps, an inclined bank of approximately 10–12 parallel smooth dark-blue tubular collectors extending downward and forward, mounted on a clean dark triangular support frame. The tubes must look like individual cylindrical tubes with visible separation, NOT a rectangular photovoltaic grid. No separate PV panel or vertical tank in the water system. No branding. Keep the entire unit neatly inside the existing middle water-system space between the house and EV, with the same gentle perspective and scale.
+Style: minimal matte clay-like 3D illustration, matching the existing simplified house and car. Smooth geometric shapes, soft edges, subtle highlights and contact shadows. No detailed plumbing, roof scenery, trees or realistic chrome reflections.
+Flow visualization: show a short warm amber directional particle path from the collector tubes toward the horizontal tank to represent heat flow. Keep the house and EV's existing green solar-electric paths. Water remains an independent controllable system.
+Small necessary water-related label correction: replace the top KPI "Water consumption 1.5 kW" with "Water temperature 54°C"; replace the small central label below the water unit "1.5 kW" with "54°C". Since the water collector is thermal rather than electric, change the top "Current solar power" reading from 7.3 kW to 5.8 kW, representing the home 2.6 kW plus EV 3.2 kW. Preserve all other chart and demo values.
+Invariants: preserve the exact dark dashboard layout, brand, left navigation, house, car, charging post, solar canopy, all four source options for each system, Export surplus OFF, the chart, daily energy statistics and schedule preview. Keep the right-side Water heating control and its 54°C reading. Do not move or redesign any UI panels. Do not add explanations, logos or labels outside the interface.
+Return ONE complete wide landscape dashboard screenshot, same aspect ratio as image 1, with crisp typography.
