@@ -1,0 +1,4105 @@
+/* Visual system matched to the approved ThermaVoltFlow concept images. */
+:root {
+    --green: #00ef7d;
+    --cyan: #00d4f2;
+    --amber: #ffbf19;
+    --muted: #a3bacd;
+    --border: #17313e;
+    color: #f4f6f9;
+    background: #06121a;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background:
+        radial-gradient(ellipse at 55% 35%, #0a202b44, transparent 65%), #06121a;
+    font-size: 14px;
+}
+h1,
+h2,
+.metric-value,
+.analytics-kpi strong {
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+    font-size: clamp(25px, 2.25vw, 36px);
+    letter-spacing: -0.7px;
+    font-weight: 700;
+    line-height: 1.15;
+}
+h2 {
+    font-size: 26px;
+}
+h3 {
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+}
+.green {
+    color: var(--green);
+}
+.cyan {
+    color: var(--cyan);
+}
+.blue {
+    color: #00bbec;
+}
+.amber {
+    color: var(--amber);
+}
+.muted {
+    color: var(--muted);
+}
+.tiny {
+    font-size: 12px;
+}
+.sidebar {
+    width: 224px;
+    padding: 27px 12px 20px;
+    background: linear-gradient(90deg, #0b1820, #08161e);
+    border-right: 1px solid #0d202a;
+    box-shadow: none;
+}
+.brand {
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.9px;
+    margin: 0 12px 25px;
+}
+.brand > span {
+    color: #00ef7d;
+    display: inline !important;
+}
+.nav-item {
+    font-size: 16px;
+    gap: 18px;
+    min-height: 52px;
+    margin: 0 0 9px;
+    padding: 13px 17px;
+    color: #e9f1f9;
+    border-radius: 7px;
+}
+.nav-item.selected {
+    padding: 13px 17px;
+    color: white;
+    background: linear-gradient(110deg, #05643a, #074d35);
+    border: 0;
+}
+.nav-item:hover {
+    background: #103e30;
+    color: white;
+}
+.nav-item svg {
+    color: #f6f9fc;
+    stroke-width: 2.1;
+}
+.sidebar-bottom .nav-item {
+    font-size: 14px;
+    color: #8cacc0;
+    padding-left: 18px;
+}
+.sidebar-connection {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 14px 19px 0;
+    font-size: 11px;
+    color: #6c91a4;
+}
+.sidebar-connection i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #00d77b;
+}
+.sidebar-connection i.offline {
+    background: #e8af3e;
+}
+.app-shell > main {
+    margin-left: 224px;
+    width: calc(100% - 224px);
+}
+.page-content {
+    padding: 23px 19px 20px;
+    max-width: 1920px;
+}
+.page-header {
+    margin: 0 0 21px;
+    gap: 15px;
+    align-items: center;
+    min-height: 53px;
+}
+.page-title > div {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+.page-title h1 {
+    white-space: nowrap;
+}
+.page-title p {
+    margin-top: 9px;
+    color: #b1c9de;
+    font-size: 17px;
+}
+.demo-badge {
+    font-size: 11px;
+    letter-spacing: 0;
+    padding: 6px 9px;
+    background: #162731;
+    border: 1px solid #243a48;
+    color: #dce8f8;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+.environment-controls {
+    gap: 15px;
+    flex-shrink: 0;
+}
+.segmented {
+    background: #091923;
+    border: 1px solid #213a49;
+    border-radius: 7px;
+    padding: 3px;
+    gap: 2px;
+}
+.segmented button {
+    font-size: 13px;
+    padding: 8px 17px;
+    color: white;
+    min-height: 35px;
+    border-radius: 5px;
+}
+.segmented button.active {
+    background: linear-gradient(#00f782, #00dd72);
+    border: 1px solid #00ff8a;
+    color: #00130a;
+    padding: 7px 16px;
+    font-weight: 600;
+    box-shadow: 0 0 9px #00ed7020;
+}
+.light-switch button {
+    min-width: 86px;
+    gap: 12px;
+}
+.light-switch button.active {
+    color: #00160a;
+}
+.temperature-switch button {
+    min-width: 49px;
+    padding: 8px 10px;
+}
+.temperature-switch button.active {
+    padding: 7px 9px;
+}
+.weather-trigger {
+    height: 44px;
+    min-width: 135px;
+    gap: 10px;
+    font-size: 16px;
+    background: linear-gradient(#142632, #0a1c26);
+    border: 1px solid #203b49;
+    padding: 0 12px;
+    border-radius: 7px;
+}
+.weather-trigger > svg:first-child {
+    color: #dce7f2;
+    filter: drop-shadow(0 2px 2px #0005);
+}
+.weather-menu {
+    width: 203px;
+    top: 47px;
+    padding: 8px 7px 10px;
+    background: linear-gradient(120deg, #0e2330, #071a24);
+    border: 1px solid #345363;
+    box-shadow: 0 14px 35px #0009;
+    border-radius: 8px;
+}
+.weather-menu > small {
+    font-size: 13px;
+    letter-spacing: 0;
+    color: #c0d4e6;
+    text-transform: none;
+    padding: 9px 10px 13px;
+    border-bottom: 1px solid #1b3340;
+    margin-bottom: 5px;
+}
+.weather-menu button {
+    font-size: 15px;
+    padding: 10px;
+    gap: 14px;
+}
+.weather-menu button[aria-checked="true"] {
+    background: transparent;
+    color: white;
+}
+.weather-menu button:hover {
+    background: #18384a;
+}
+.panel {
+    background: linear-gradient(110deg, #08192388, #0b1c2555);
+    border: 1px solid var(--border);
+    box-shadow: none;
+    border-radius: 8px;
+}
+.panel-heading {
+    margin-bottom: 17px;
+    gap: 12px;
+}
+.panel-heading p {
+    color: #b0c3d5;
+}
+.source-options {
+    border: 0;
+    padding: 0;
+    gap: 4px;
+    background: transparent;
+    overflow: visible;
+}
+.source-options button {
+    border: 1px solid #233d4b;
+    background: linear-gradient(#192c37, #11232e);
+    border-radius: 6px;
+    color: white;
+    font-size: 13px;
+    padding: 12px 5px;
+    min-height: 41px;
+    line-height: 1.1;
+}
+.source-options button.active {
+    color: #00170b;
+    background: linear-gradient(#00f780, #00df74);
+    border-color: #00e980;
+    box-shadow: none;
+    font-weight: 600;
+}
+.primary {
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 13px 21px;
+    background: linear-gradient(#00ef7d, #00dc72);
+    border: 1px solid #00e87b;
+    color: #00140b;
+    box-shadow: none;
+}
+.secondary {
+    font-size: 14px;
+    color: #edf4ff;
+    border-color: #28424f;
+    background: linear-gradient(#142631, #0c1b24);
+    padding: 12px 16px;
+    border-radius: 6px;
+}
+.danger-outline {
+    border: 1px solid #ff495c;
+    color: #ff5c69;
+    background: #0c1821;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 16px;
+}
+.danger-text {
+    font-size: 14px;
+    color: #ff4c55;
+    padding: 14px;
+}
+.button-row {
+    gap: 12px;
+}
+.toggle {
+    width: 49px;
+    height: 27px;
+    padding: 3px;
+    background: #415261;
+    box-shadow: inset 0 1px 3px #0005;
+}
+.toggle > span {
+    width: 21px;
+    height: 21px;
+    background: #f5f8fc;
+    box-shadow: 0 1px 2px #0005;
+}
+.toggle.on {
+    background: #00e47b;
+}
+.toggle.on > span {
+    transform: translateX(22px);
+}
+.progress-track {
+    height: 13px;
+    background: #203342;
+    border-radius: 10px;
+    margin: 0;
+}
+.progress-track > span {
+    background: linear-gradient(90deg, #00f17d, #00df74);
+}
+.progress-track > i {
+    background: #c2def0;
+}
+.pill {
+    font-size: 11px;
+    border-color: #274350;
+    background: #102530;
+    color: #bfd2e4;
+}
+.text-link {
+    font-size: 14px;
+    color: #45d7ff;
+    gap: 9px;
+}
+.line-chart text,
+.cumulative text {
+    fill: #c2d2e8;
+    font:
+        12px Arial,
+        sans-serif;
+}
+.chart-legend {
+    font-size: 12px;
+    color: #c5d7e6;
+    gap: 20px;
+}
+.chart-legend i {
+    width: 10px;
+    height: 10px;
+}
+.chart-unit {
+    color: #b6c9dc;
+}
+.line-chart {
+    height: 205px;
+    margin-top: 12px;
+}
+.chart-tooltip {
+    background: #071720f5;
+    border-color: #36505d;
+    color: white;
+    font-size: 12px;
+}
+.chart-tooltip b {
+    font-size: 13px;
+}
+.solar-dot {
+    background: #00f07c;
+}
+.cyan-dot {
+    background: #00d5ec;
+}
+.grid-dot {
+    background: #ffb21c;
+}
+.off-dot {
+    background: #71859a;
+}
+.dashboard-page {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(290px, 22vw, 350px);
+    gap: 0 14px;
+    align-items: start;
+}
+.dashboard-page > .page-header {
+    grid-column: 1;
+    grid-row: 1;
+    min-height: 39px;
+    margin: 0 0 17px;
+    gap: 10px;
+}
+.dashboard-page .page-title > div {
+    gap: 10px;
+}
+.dashboard-page h1 {
+    font-size: clamp(24px, 2.15vw, 34px);
+}
+.dashboard-page .demo-badge {
+    font-size: 10px;
+    padding: 6px 7px;
+}
+.dashboard-page .environment-controls {
+    gap: 10px;
+}
+.dashboard-page .light-switch button {
+    min-width: 72px;
+    font-size: 12px;
+    padding: 7px 10px;
+    gap: 9px;
+}
+.dashboard-page .light-switch button.active {
+    padding: 6px 9px;
+}
+.dashboard-page .light-switch svg {
+    width: 21px;
+}
+.dashboard-page .weather-trigger {
+    font-size: 14px;
+    min-width: 120px;
+    height: 40px;
+}
+.dashboard-page .temperature-switch button {
+    min-width: 39px;
+    font-size: 12px;
+    padding: 7px 8px;
+}
+.dashboard-page .temperature-switch button.active {
+    padding: 6px 7px;
+}
+.dashboard-metrics {
+    grid-column: 1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin: 0;
+}
+.dashboard-metrics .metric-card {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 14px;
+    min-height: 79px;
+    height: 79px;
+}
+.dashboard-metrics .metric-icon {
+    width: 38px;
+    height: 42px;
+    background: none;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+}
+.dashboard-metrics .metric-caption {
+    font-size: 13px;
+    color: #bfd3e4;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+.dashboard-metrics .metric-value {
+    display: block;
+    margin: 0;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+    line-height: 1.1;
+}
+.dashboard-metrics .metric-value > span {
+    font-size: 22px;
+    color: #f2f7fc;
+    font-weight: 600;
+    margin: 0;
+}
+.dashboard-main {
+    grid-column: 1;
+    grid-row: 3;
+    min-width: 0;
+}
+.device-column {
+    grid-column: 2;
+    grid-row: 1 / span 4;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 14px;
+}
+.quick-device,
+.battery-widget,
+.export-widget,
+.auto-status {
+    padding: 12px 13px;
+    border-color: #16313e;
+    border-radius: 8px;
+}
+.quick-device h3,
+.battery-widget h3,
+.export-widget h3,
+.auto-status h3 {
+    font-size: 17px;
+    margin: 0 0 11px;
+    gap: 12px;
+}
+.quick-device .source-options button {
+    font-size: 12px;
+    padding: 10px 4px;
+    min-height: 38px;
+}
+.device-detail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    margin: 9px 0 0;
+    font-size: 12px;
+    color: #bfd3e6;
+    line-height: 1.5;
+}
+.device-reading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    color: #bfd4e8;
+    font-size: 13px;
+}
+.device-reading strong {
+    font-size: 20px;
+    font-weight: 600;
+    color: #f7f9fd;
+}
+.device-reading b {
+    font-size: 17px;
+    color: #f5f6fa;
+}
+.ev-status {
+    font-size: 13px;
+    font-weight: 500;
+    margin: 9px 0 9px;
+    color: #f1f5f9;
+}
+.ev-level {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #c1d4e8;
+}
+.ev-level > span {
+    margin-right: auto;
+}
+.ev-level strong {
+    color: white;
+    font-size: 19px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.ev-level .progress-track {
+    width: 37%;
+    height: 12px;
+    flex-shrink: 0;
+}
+.battery-widget .panel-heading {
+    margin: 0 0 11px;
+    gap: 8px;
+}
+.battery-widget h3 {
+    margin: 0;
+}
+.battery-auto {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 10px;
+    color: #c9dced;
+    white-space: nowrap;
+}
+.battery-auto b {
+    font-weight: 400;
+    font-size: 10px;
+    color: white;
+    padding: 4px 7px;
+    border-radius: 4px;
+    border: 1px solid #1884a4;
+    background: #07506b;
+}
+.battery-level {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.battery-level strong {
+    font-size: 31px;
+    font-weight: 600;
+}
+.battery-level .progress-track {
+    height: 22px;
+    flex: 1;
+}
+.battery-data {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 14px;
+}
+.battery-data > div + div {
+    border-left: 1px solid #15313e;
+    padding-left: 8px;
+}
+.battery-data small {
+    font-size: 11px;
+    color: #bacfe4;
+    margin-bottom: 6px;
+    white-space: nowrap;
+}
+.battery-data b {
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.battery-data .cyan {
+    color: #00d9ef;
+}
+.export-widget {
+    align-items: flex-start;
+    position: relative;
+    min-height: 90px;
+}
+.export-widget h3 {
+    margin: 0 0 7px;
+    font-size: 17px;
+}
+.export-widget p {
+    font-size: 12px;
+    color: #bed3e6;
+    margin: 0 0 5px;
+}
+.export-widget small {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    color: #bfd4e8;
+}
+.export-widget .toggle {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+.auto-status h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+.auto-status > div:not(.panel-heading) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    margin: 0;
+    padding: 3px 0;
+    border-bottom: 1px solid #142b36;
+    color: #b9cfe3;
+}
+.auto-status b {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 500;
+    color: #e9f3ff;
+}
+.auto-status b.green {
+    color: var(--green);
+}
+.auto-status b.cyan {
+    color: var(--cyan);
+}
+.auto-status > p {
+    font-size: 12px;
+    color: #b5cde2;
+    gap: 8px;
+    border: 0;
+    padding: 8px 0 0;
+    margin: 0;
+    line-height: 1.4;
+}
+.shortfall {
+    font-size: 11px;
+    line-height: 1.4;
+    color: #ffbe50;
+    margin-top: 8px;
+}
+.energy-scene,
+.energy-scene.night {
+    height: clamp(385px, 33.5vw, 535px);
+    position: relative;
+    isolation: isolate;
+    background: transparent;
+    overflow: visible;
+    margin: 3px 0 9px;
+}
+.scene-floor {
+    position: absolute;
+    inset: 36% 0 8%;
+    z-index: -1;
+    background:
+        radial-gradient(ellipse at 20% 8%, #93b4bf0e, transparent 30%),
+        radial-gradient(ellipse at 48% 92%, #8ea9b514, transparent 28%);
+    filter: blur(8px);
+}
+.device-art {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    user-select: none;
+    pointer-events: none;
+}
+.art-home,
+.art-water,
+.art-ev,
+.art-battery {
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+}
+.art-home {
+    left: -1%;
+    top: 0;
+    width: 37%;
+    height: 54%;
+}
+.art-home .device-art {
+    object-fit: fill;
+}
+.art-water {
+    left: 31%;
+    top: 7%;
+    width: 34%;
+    height: 45%;
+}
+.art-water .device-art {
+    object-fit: fill;
+}
+.art-ev {
+    left: 67%;
+    top: 21%;
+    width: 32%;
+    height: 31%;
+}
+.art-ev .device-art {
+    object-fit: fill;
+}
+.art-battery {
+    left: 36%;
+    top: 66%;
+    width: 20%;
+    height: 33%;
+}
+.art-battery .device-art {
+    object-fit: fill;
+}
+.rooftop-label {
+    position: absolute;
+    left: 50%;
+    top: 6%;
+    font-size: 13px;
+    color: #c8e0f5;
+    z-index: 4;
+}
+.energy-paths {
+    z-index: 3;
+    overflow: visible;
+}
+.energy-paths .wire {
+    stroke-width: 2.3;
+    fill: none;
+    stroke-dasharray: 6 6;
+    stroke: #6c778450;
+    filter: none;
+}
+.energy-paths .inactive-route {
+    stroke: #7d8896;
+    stroke-width: 2;
+    opacity: 0.75;
+}
+.energy-paths .wire.solar.active {
+    stroke: #00ff6f;
+    stroke-width: 3;
+    filter: drop-shadow(0 0 4px #00f56e);
+    animation: flow var(--flow-duration, 1s) linear infinite;
+}
+.energy-paths .wire.storage.active {
+    stroke: #00e3f2;
+    stroke-width: 3;
+    filter: drop-shadow(0 0 4px #00d5ed);
+    animation: flow var(--flow-duration, 1s) linear infinite;
+}
+.energy-paths .wire.thermal {
+    opacity: 0;
+}
+.energy-paths .wire.thermal.active {
+    opacity: 1;
+    stroke: #ffad28;
+    stroke-width: 3;
+    filter: drop-shadow(0 0 4px #ff7000);
+    animation: flow calc(var(--flow-duration, 1s) * 1.1) linear infinite;
+}
+.energy-paths .wire.grid.active {
+    stroke: #ffca22;
+    filter: drop-shadow(0 0 3px #ffb70077);
+    animation: flow calc(var(--flow-duration, 1s) * 1.5) linear infinite;
+}
+.device-label {
+    z-index: 4;
+    text-shadow: none;
+    width: 145px;
+    transform: translateX(-50%);
+    text-align: center;
+}
+.device-label > span {
+    font-size: 16px;
+    gap: 9px;
+    color: #eaf3fa;
+}
+.device-label > span.blue svg {
+    color: #00bdec;
+}
+.device-label > span.cyan svg {
+    color: #00ccef;
+}
+.device-label > span.green svg {
+    color: #00ed7b;
+}
+.device-label strong {
+    font-family: Arial, sans-serif;
+    font-size: 23px;
+    display: inline-block;
+    background: #08151cce;
+    border: 1px solid #1d3441;
+    border-radius: 5px;
+    padding: 3px 14px;
+    letter-spacing: -0.4px;
+    margin-top: 3px;
+    white-space: nowrap;
+}
+.device-label em {
+    font-size: 13px;
+    color: #c7dff4;
+    margin-top: 5px;
+    white-space: nowrap;
+}
+.home-label {
+    left: 21%;
+    top: 52%;
+}
+.water-label {
+    left: 49%;
+    top: 52%;
+}
+.ev-label {
+    left: 82%;
+    top: 52%;
+}
+.battery-label {
+    left: 53%;
+    top: 72%;
+    width: 195px;
+    text-align: left;
+    transform: none;
+}
+.battery-label > span {
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: start;
+}
+.battery-label strong {
+    font-size: 32px;
+    font-weight: 600;
+    border: 0;
+    padding: 0;
+    background: none;
+    margin: 4px 0;
+    display: block;
+}
+.battery-label > b {
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+    color: #e5edf4;
+}
+.battery-label em {
+    font-size: 16px;
+    font-weight: 600;
+    color: #00d9ec;
+    margin-top: 7px;
+}
+.scene-grid-meter {
+    left: auto;
+    right: 3%;
+    bottom: 5%;
+    display: flex;
+    align-items: end;
+    gap: 8px;
+    color: #8293a8;
+}
+.scene-grid-meter > svg {
+    stroke-width: 2;
+    filter: drop-shadow(2px 3px 1px #0008);
+}
+.scene-grid-meter span {
+    font-size: 13px;
+    color: #f4f4f9;
+    display: block;
+}
+.scene-grid-meter b {
+    font-size: 18px;
+    display: block;
+    color: white;
+    margin-top: 6px;
+}
+.scene-grid-meter small {
+    font-size: 11px;
+}
+.dashboard-charts {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(200px, 1fr);
+    gap: 11px;
+    margin: 0;
+}
+.power-panel,
+.today-panel {
+    padding: 15px 16px;
+}
+.power-panel h3,
+.today-panel h3 {
+    font-size: 17px;
+}
+.power-panel h3 > span {
+    font-weight: 400;
+    margin-left: 3px;
+}
+.power-panel .panel-heading {
+    margin-bottom: 11px;
+}
+.power-panel .chart-legend {
+    justify-content: end;
+    font-size: 11px;
+    gap: 17px;
+}
+.chart-more {
+    color: #a4cbde;
+}
+.power-panel .line-chart {
+    height: 180px;
+    margin-top: 8px;
+}
+.power-panel .chart-unit {
+    margin-left: auto;
+}
+.today-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 22px;
+}
+.today-panel > h3 {
+    margin-bottom: 4px;
+}
+.today-stat {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    color: #c6dbef;
+    font-size: 13px;
+}
+.today-stat > span:first-child {
+    background: transparent;
+    width: 30px;
+    height: 32px;
+    border-radius: 0;
+}
+.today-stat > span:nth-child(2) {
+    width: auto;
+    height: auto;
+    background: none;
+    display: block;
+    white-space: nowrap;
+}
+.today-stat > strong {
+    font-size: 18px;
+    white-space: nowrap;
+    margin-left: auto;
+    color: #f4f8fc;
+}
+.today-stat small {
+    display: inline;
+    font-size: 16px;
+    font-weight: 500;
+    color: inherit;
+}
+.simulation-tools {
+    grid-column: 1/-1;
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    border-top: 1px solid #16303e;
+    padding-top: 14px;
+}
+.simulation-clock {
+    margin: 0;
+    gap: 20px;
+    color: #8aafc5;
+    font-size: 11px;
+    flex-wrap: wrap;
+}
+.simulation-clock > span {
+    gap: 8px;
+}
+.simulation-clock b {
+    color: #d5e9f8;
+}
+.simulation-clock small {
+    font-size: 10px;
+    color: #799db5;
+}
+.simulation-clock button {
+    font-size: 11px;
+    padding: 7px 10px;
+    border-color: #284653;
+    background: #0c202b;
+    color: #b9d2e6;
+    border-radius: 5px;
+}
+.simulation-clock button.running {
+    color: #00ec7b;
+    border-color: #00ad65;
+}
+.simulation-clock select {
+    font-size: 11px;
+    background: #0c202b;
+    border-color: #284653;
+    padding: 6px;
+    color: #b9d2e6;
+}
+.simulation-tools .environment-controls {
+    transform-origin: right center;
+    zoom: 0.85;
+}
+.page-footer {
+    grid-column: 1/-1;
+    font-size: 10px;
+    margin-top: 15px;
+    color: #648da7;
+}
+.page-footer .connection-dot {
+    background: #00db78;
+}
+.page-footer .connection-dot.disconnected {
+    background: #e7ab49;
+}
+.systems-online {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #00f383;
+    font-size: 14px;
+}
+.systems-online i {
+    width: 13px;
+    height: 13px;
+    background: #00ef76;
+    border-radius: 50%;
+}
+.control-summary {
+    display: flex;
+    align-items: center;
+    padding: 17px 20px;
+    margin-bottom: 14px;
+    gap: 25px;
+}
+.control-summary > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    flex: 1;
+    min-width: 0;
+}
+.control-summary > div + div {
+    border-left: 1px solid #27414e;
+}
+.control-summary > div > svg {
+    color: #00ee7a;
+}
+.control-summary > div:nth-child(2) > svg {
+    color: #ffca13;
+}
+.control-summary span {
+    font-size: 13px;
+    color: #b5cce0;
+}
+.control-summary span strong {
+    display: block;
+    color: white;
+    font-size: 25px;
+    margin-top: 5px;
+}
+.control-summary > div > strong {
+    font-size: 17px;
+}
+.control-summary > .danger-outline {
+    font-size: 13px;
+    padding: 10px 12px;
+}
+.control-cards {
+    gap: 13px;
+    align-items: stretch;
+}
+.control-card {
+    display: flex;
+    padding: 17px;
+    gap: 0;
+}
+.control-card .panel-heading {
+    margin-bottom: 8px;
+    gap: 9px;
+}
+.control-card h3 {
+    font-size: 19px;
+    gap: 12px;
+}
+.control-card h3 [data-icon="water"] {
+    color: #35c9f7;
+}
+.control-card h3 [data-icon="ev"] {
+    color: #00ee7e;
+}
+.device-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    line-height: 1.3;
+    white-space: nowrap;
+    color: #b6f9d7;
+    padding: 6px 10px;
+    border: 1px solid #09603c;
+    border-radius: 22px;
+    background: #00452555;
+}
+.device-status i {
+    width: 10px;
+    height: 10px;
+    background: #00f278;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.device-status.inactive {
+    color: #a8bbc9;
+    border-color: #344656;
+    background: #172630;
+}
+.device-status.inactive i {
+    background: #8495a5;
+}
+.control-illustration {
+    height: clamp(185px, 15.5vw, 255px);
+    margin: 0 -5px;
+    position: relative;
+}
+.control-illustration .device-art {
+    object-fit: contain;
+    filter: drop-shadow(0 9px 6px #0003);
+}
+.control-card:nth-child(2) .control-illustration .device-art {
+    object-fit: fill;
+    width: 80%;
+    margin: auto;
+}
+.control-reading {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 4px;
+    margin: -4px 0 13px;
+    position: relative;
+    z-index: 2;
+}
+.control-reading > small {
+    font-size: 13px;
+    color: #bcd2e4;
+}
+.control-reading > strong {
+    font-size: 30px;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+.control-card .source-options button {
+    font-size: 13px;
+    padding: 12px 4px;
+    min-height: 44px;
+}
+.setting-line {
+    margin: 17px 0;
+    padding-top: 0;
+    border: 0;
+    gap: 12px;
+}
+.setting-line b {
+    font-size: 14px;
+    color: #f2f7fb;
+    font-weight: 400;
+}
+.setting-line small {
+    font-size: 11px;
+    color: #9dbbd2;
+    margin-top: 6px;
+    line-height: 1.4;
+}
+.range-label {
+    font-size: 14px;
+    color: #f3f7fc;
+    margin: 18px 0 9px;
+    gap: 0;
+}
+.range-label strong {
+    font-size: 18px;
+    color: white;
+}
+.range-label input {
+    height: 8px;
+    accent-color: #00ee7c;
+    margin-top: 16px;
+}
+.range-limits {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 9px;
+    font-size: 11px;
+    color: #b5ccdf;
+}
+.control-card .ev-level {
+    font-size: 14px;
+    margin: 24px 0 13px;
+}
+.control-card .ev-level strong {
+    font-size: 21px;
+}
+.control-card .ev-level .progress-track {
+    height: 14px;
+}
+.control-card .stop-charge {
+    margin-top: 24px;
+    border-width: 1.5px;
+    min-height: 44px;
+}
+.device-mini-chart {
+    border-top: 1px solid #203947;
+    margin-top: 15px;
+    padding-top: 11px;
+}
+.mini-chart-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 12px;
+    color: #eef7ff;
+}
+.mini-chart-title small {
+    font-size: 11px;
+    color: #b4cbde;
+}
+.device-mini-chart .chart-legend {
+    display: none;
+}
+.device-mini-chart .line-chart {
+    height: 140px;
+    margin-top: 5px;
+}
+.control-footnote {
+    color: #7b9db4;
+    font-size: 11px;
+    display: flex;
+    gap: 8px;
+    line-height: 1.5;
+    margin: 12px 0 0;
+}
+.control-schedule {
+    font-size: 14px;
+    justify-content: end;
+    align-self: end;
+    margin-top: auto;
+    padding-top: 14px;
+}
+.control-bottom {
+    grid-template-columns: 1fr 1.08fr;
+    gap: 13px;
+    margin-top: 13px;
+}
+.control-bottom > .panel {
+    padding: 16px 20px;
+}
+.grid-export-panel h3 {
+    font-size: 19px;
+}
+.grid-export-body {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 18px;
+    align-items: center;
+}
+.export-setting {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+    margin-bottom: 9px;
+}
+.grid-export-body small {
+    font-size: 12px;
+    color: #b0c7dc;
+}
+.grid-export-body > div:last-child {
+    border-left: 1px solid #25414f;
+    padding-left: 25px;
+    min-width: 130px;
+    font-size: 14px;
+}
+.grid-export-body strong {
+    font-size: 30px;
+    display: block;
+    margin-top: 6px;
+    white-space: nowrap;
+}
+.activity-list > div {
+    padding: 7px 0;
+    gap: 14px;
+    border-bottom: 1px solid #152f3c;
+}
+.activity-list time {
+    font-size: 12px;
+    color: #c5d6e6;
+}
+.activity-list > div > svg {
+    color: #17caff;
+}
+.activity-list b {
+    font-size: 13px;
+    font-weight: 400;
+}
+.activity-list small {
+    color: #809fb6;
+    font-size: 10px;
+    margin-top: 3px;
+}
+.control-bottom .panel-heading {
+    margin-bottom: 7px;
+}
+.reserve-settings {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 16px 20px;
+    margin-top: 13px;
+}
+.reserve-settings h3 {
+    font-size: 16px;
+}
+.reserve-settings > span {
+    font-size: 12px;
+    color: #a5c0d6;
+}
+.reserve-settings .range-label {
+    width: 235px;
+    margin: 0;
+    font-size: 12px;
+}
+.reserve-settings .range-label strong {
+    font-size: 14px;
+}
+/* Scheduling follows the approved calendar composition, with an automatic home row. */
+.scheduler-page > .page-header {
+    margin-bottom: 23px;
+}
+.scheduler-page .page-toolbar {
+    justify-content: flex-end;
+    margin: -74px 0 26px;
+    min-height: 48px;
+    position: relative;
+    pointer-events: none;
+}
+.scheduler-page .page-toolbar > div {
+    display: none;
+}
+.scheduler-page .page-toolbar > button {
+    pointer-events: auto;
+    font-size: 15px;
+}
+.scheduler-layout {
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 12px;
+}
+.timeline-panel {
+    padding: 19px 16px;
+    overflow: hidden;
+}
+.schedule-toolbar {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 22px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #1b3644;
+    padding-bottom: 17px;
+}
+.day-picker {
+    order: initial;
+    width: auto;
+    gap: 0;
+    flex: 1;
+}
+.day-picker button {
+    font-size: 13px;
+    padding: 11px 14px;
+    flex: 1;
+    border: 1px solid #203946;
+    background: linear-gradient(#142733, #0b1b26);
+    border-radius: 4px;
+    color: white;
+}
+.day-picker button.active {
+    background: #00e779;
+    color: #00120b;
+    border-color: #00ef7f;
+    font-weight: 600;
+}
+.timeline-axis,
+.timeline-row {
+    grid-template-columns: 107px 1fr;
+    gap: 15px;
+    min-width: 620px;
+    padding-right: 12px;
+}
+.timeline-axis {
+    height: 24px;
+    margin-bottom: 18px;
+}
+.timeline-axis > div > span {
+    font-size: 12px;
+    color: #c4d3e6;
+}
+.timeline-row {
+    margin-bottom: 24px;
+    align-items: center;
+}
+.timeline-label {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2px;
+    padding: 0 3px;
+}
+.timeline-label .device-art {
+    width: 95px;
+    height: 76px;
+    object-fit: contain;
+}
+.timeline-label b {
+    font-size: 13px;
+    color: #f4f7fc;
+    font-weight: 500;
+    line-height: 1.3;
+    max-width: 70px;
+}
+.timeline-track {
+    height: 76px;
+    border: 0;
+    border-radius: 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        #0a1b24,
+        #0a1b24 calc(12.5% - 1px),
+        #244252 calc(12.5% - 1px),
+        #244252 12.5%
+    );
+}
+.time-block {
+    border-radius: 4px;
+    padding: 13px 14px;
+    border: 1px solid #00ed74;
+    background: linear-gradient(100deg, #039b44, #05ac51);
+    color: white !important;
+    height: 100%;
+}
+.time-block.grid {
+    border-color: #efae00;
+    background: linear-gradient(100deg, #bc8206, #ad7507);
+}
+.time-block.off,
+.off-segment {
+    background: linear-gradient(110deg, #3f5368, #3a4c5e);
+    border: 1px solid #607589;
+    color: white;
+}
+.time-block strong {
+    font-size: 15px;
+    font-weight: 600;
+}
+.time-block small {
+    font-size: 12px;
+    margin-top: 8px;
+    white-space: nowrap;
+}
+.time-block.selected {
+    outline: 2px solid #72ffab;
+    outline-offset: -1px;
+    box-shadow: 0 0 7px #00ff8844;
+}
+.off-segment {
+    position: absolute;
+    height: 100%;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px;
+    overflow: hidden;
+}
+.off-segment b {
+    font-size: 14px;
+    font-weight: 500;
+}
+.off-segment small {
+    font-size: 11px;
+    margin-top: 8px;
+    white-space: nowrap;
+}
+.timeline-footer {
+    border: 0;
+    margin-top: 2px;
+    padding: 13px 0 17px;
+}
+.timeline-footer .chart-legend {
+    gap: 20px;
+    font-size: 12px;
+}
+.timeline-footer > small {
+    font-size: 10px;
+}
+.inline-note {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    color: #bfd1e4;
+    font-size: 12px;
+    line-height: 1.5;
+    gap: 10px;
+}
+.inline-note > svg {
+    color: #b5d8ee;
+}
+.auto-timeline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #073b31, #092a2e);
+    border: 1px solid #0d6c50;
+    border-radius: 4px;
+    color: #83f8c3;
+    font-size: 13px;
+}
+.block-editor {
+    padding: 18px 20px;
+}
+.block-editor h3 {
+    font-size: 22px;
+}
+.block-editor label,
+.field-label {
+    font-size: 14px;
+    color: #bcd4e7;
+    margin: 20px 0 9px;
+}
+.block-editor select,
+.compact-select {
+    font-size: 14px;
+    color: #edf6ff;
+    background: linear-gradient(#112733, #0e202b);
+    border: 1px solid #2b4858;
+    border-radius: 6px;
+    padding: 13px;
+}
+.block-editor label select {
+    margin-top: 10px;
+}
+select {
+    color-scheme: dark;
+}
+select option,
+select optgroup {
+    color: #edf6ff;
+    background-color: #0e202b;
+}
+.source-picker {
+    background: none;
+    border: 0;
+    padding: 0;
+    gap: 3px;
+}
+.source-picker button {
+    border: 1px solid #223f4c;
+    background: #10232e;
+    padding: 12px 10px;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+.source-picker button.active {
+    padding: 11px 9px;
+}
+.repeat-days {
+    gap: 3px;
+}
+.repeat-days button {
+    height: 37px;
+    width: 34px;
+    font-size: 11px;
+    border: 1px solid #1f3a49;
+    background: #0b1f2b;
+    color: white;
+}
+.repeat-days button.active {
+    background: #00e977;
+    color: #00130b;
+    border-color: #00f17d;
+}
+.repeat-shortcuts button {
+    font-size: 11px;
+    color: #7cb9d6;
+}
+.repeat-shortcuts {
+    margin: 12px 0 21px;
+}
+.block-editor > .primary {
+    font-size: 15px;
+    min-height: 46px;
+    margin-top: 17px;
+}
+.block-editor > .tiny {
+    font-size: 11px;
+    color: #809fb7;
+}
+.schedule-summary {
+    padding: 16px 20px;
+    margin-top: 13px;
+}
+.schedule-summary h3 {
+    font-size: 20px;
+}
+.schedule-summary .pill {
+    color: #80f5b6;
+    border-color: #176142;
+    background: #06442b;
+}
+.automation-cards {
+    gap: 16px;
+}
+.automation-cards > div {
+    border: 1px solid #1b3441;
+    border-radius: 7px;
+    padding: 16px 14px;
+    color: #00ec78;
+}
+.automation-cards b {
+    font-size: 13px;
+    color: white;
+}
+.automation-cards small {
+    font-size: 12px;
+    color: #a8c1d6;
+}
+/* Reporting uses the same chart sizes, vivid series, and readable metrics as the concept. */
+.analytics-page > .page-header {
+    margin-bottom: 21px;
+}
+.analytics-page > .page-toolbar {
+    justify-content: flex-end;
+    margin: -72px 0 29px;
+    min-height: 45px;
+    pointer-events: none;
+}
+.analytics-page > .page-toolbar > div:first-child {
+    display: none;
+}
+.analytics-page .page-toolbar .button-row {
+    pointer-events: auto;
+}
+.analytics-kpis {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 11px;
+    margin-bottom: 12px;
+}
+.analytics-kpi {
+    padding: 17px 15px;
+    min-height: 158px;
+    position: relative;
+    display: block;
+}
+.analytics-kpi .metric-caption {
+    font-size: 13px;
+    gap: 14px;
+    align-items: start;
+    color: #bad0e4;
+    min-height: 24px;
+    padding-left: 47px;
+}
+.analytics-kpi .metric-caption > span {
+    position: absolute;
+    left: 16px;
+    top: 20px;
+}
+.analytics-kpi .metric-caption svg {
+    width: 35px;
+    height: 35px;
+    stroke-width: 2;
+}
+.analytics-kpi > strong {
+    display: block;
+    font-size: 26px;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+    letter-spacing: -0.5px;
+    margin: 0 0 12px;
+    padding-left: 47px;
+}
+.analytics-kpi > strong small {
+    font-size: 20px;
+    margin-left: 5px;
+    color: white;
+    font-weight: 600;
+}
+.analytics-kpi > .tiny {
+    font-size: 10px;
+    display: block;
+    color: #9fb8d2;
+    margin-top: 3px;
+}
+.kpi-spark {
+    display: block;
+    width: 100%;
+    height: 43px;
+    margin-top: 5px;
+}
+.analytics-main {
+    grid-template-columns: 1.65fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+.analytics-main > .panel,
+.analytics-secondary > .panel,
+.analytics-secondary + .panel {
+    padding: 20px 21px;
+}
+.analytics-main h3 {
+    font-size: 21px;
+}
+.analytics-main .panel-heading {
+    margin-bottom: 17px;
+}
+.analytics-main .panel-heading p {
+    display: none;
+}
+.analytics-main .panel-heading > .pill {
+    display: none;
+}
+.analytics-main .chart-legend {
+    justify-content: end;
+    margin-top: -35px;
+    margin-bottom: 14px;
+    font-size: 12px;
+}
+.bar-chart {
+    height: 257px;
+    padding: 25px 0 29px 30px;
+    gap: 14px;
+}
+.bar-column {
+    width: 62px;
+    max-width: 11%;
+}
+.bar-stack {
+    border-radius: 4px 4px 0 0;
+    max-height: 196px;
+}
+.bar-solar-part {
+    background: linear-gradient(#24e863, #0eb55c);
+}
+.bar-grid-part {
+    background: linear-gradient(#ffd64b, #ffa30b);
+}
+.bar-total {
+    font-size: 12px;
+    color: white;
+    margin-bottom: 8px;
+}
+.bar-day {
+    font-size: 12px;
+    color: #d1dded;
+    bottom: -24px;
+}
+.bar-grid > span {
+    font-size: 11px;
+    color: #bad0e6;
+    border-bottom: 1px solid #1c3544;
+}
+.bar-grid {
+    top: auto;
+    bottom: 29px;
+    height: 196px;
+}
+.donut-row {
+    gap: 22px;
+    margin: 35px 0 10px;
+    flex-wrap: nowrap;
+}
+.donut {
+    width: 180px;
+    height: 180px;
+    padding: 37px;
+    box-shadow: none;
+}
+.donut > div {
+    background: #091720;
+}
+.donut strong {
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+}
+.donut span {
+    font-size: 14px;
+    color: white;
+    margin-top: 4px;
+}
+.donut-legend {
+    gap: 13px;
+    min-width: 150px;
+}
+.donut-legend > div {
+    padding: 10px 0;
+    border-bottom: 1px solid #1c3542;
+    gap: 9px;
+    font-size: 12px;
+    color: #c8d9ec;
+}
+.donut-legend svg {
+    width: 27px;
+    height: 27px;
+}
+.donut-legend b {
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+}
+.donut-legend small {
+    color: #afc6de;
+    font-size: 12px;
+}
+.analytics-main > .panel > .tiny {
+    color: #7597b2;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 15px;
+}
+.analytics-secondary {
+    grid-template-columns: 1.5fr 1.12fr 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+.analytics-secondary h3 {
+    font-size: 20px;
+}
+.analytics-secondary .panel-heading {
+    margin-bottom: 17px;
+}
+.cumulative > svg {
+    height: 240px;
+}
+.cumulative text {
+    font-size: 12px;
+}
+.thermal-stat {
+    position: relative;
+    min-height: 290px;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    grid-template-rows: 35px 140px auto;
+    gap: 0;
+    text-align: left;
+    align-items: center;
+}
+.thermal-stat > .panel-heading {
+    grid-column: 1/-1;
+    grid-row: 1;
+    margin: 0 !important;
+}
+.thermal-art {
+    grid-column: 1;
+    grid-row: 2 / span 2;
+    align-self: center;
+    margin-top: 15px;
+    width: 175%;
+    height: 220px;
+    margin-left: -37.5%;
+    object-fit: contain;
+}
+.thermal-stat > strong {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+    font-size: 31px;
+    color: #ffba39;
+    margin: 15px 0 0;
+    line-height: 1.4;
+}
+.thermal-stat > strong small {
+    font-size: 19px;
+    font-weight: 600;
+    color: #ffba39;
+    white-space: nowrap;
+}
+.thermal-stat > p {
+    grid-column: 2;
+    grid-row: 3;
+    color: #a8c3dc;
+    font-size: 13px;
+    line-height: 1.5;
+    align-self: start;
+}
+.thermal-stat > p .thermal-temp {
+    font-size: 28px;
+    display: block;
+    margin-top: 14px;
+    color: #ffba39;
+    font-weight: 600;
+}
+.export-stat .panel-heading {
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.export-stat > svg {
+    color: #8098b4;
+    width: 49px;
+    height: 49px;
+    margin: 17px 0 12px;
+}
+.export-stat > strong {
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    margin: 4px 0 14px;
+}
+.export-stat strong small {
+    font-size: 22px;
+    color: white;
+}
+.export-stat > p {
+    font-size: 12px;
+    color: #a0b9d0;
+}
+.export-stat > small {
+    font-size: 11px;
+    color: #9ab4cd;
+    margin-top: 12px;
+}
+.storage-totals {
+    color: #92b3cc;
+    font-size: 12px;
+    border-color: #203c4c;
+}
+.storage-totals b {
+    color: #e3f1fb;
+}
+.export-history {
+    padding: 19px 21px;
+}
+.export-history h3 {
+    font-size: 20px;
+}
+.export-history th {
+    font-size: 12px;
+    color: #b1cbe2;
+}
+.export-history td {
+    font-size: 13px;
+}
+.export-history td,
+.export-history th {
+    border-color: #203746;
+}
+.empty-history {
+    color: #bdd7ec;
+    font-size: 14px;
+}
+.empty-history > span > small {
+    font-size: 12px;
+    color: #7fa0b8;
+}
+.lab-intro h2 {
+    font-size: 27px;
+}
+.lab-intro p {
+    color: #a9c2d8;
+    font-size: 14px;
+}
+.lab-symbol {
+    color: #00f080;
+    background: #062f28;
+    border-color: #087954;
+}
+.scenario-grid > button {
+    border-color: #1b3a4a;
+    padding: 23px;
+    gap: 14px;
+}
+.scenario-grid > button > svg {
+    color: #00e880;
+}
+.scenario-grid b {
+    font-size: 16px;
+}
+.scenario-grid span {
+    font-size: 13px;
+    color: #adc6dc;
+}
+.lab-form {
+    padding: 24px;
+}
+.lab-form h3 {
+    font-size: 21px;
+}
+.input-grid > label {
+    font-size: 14px;
+    color: #b4d0e5;
+}
+.unit-input input {
+    font-size: 15px;
+    background: #0c202c;
+    border-color: #2a475a;
+    color: #f0f7ff;
+}
+.unit-input > span {
+    color: #80abc5;
+    font-size: 12px;
+}
+.lab-bottom h3 {
+    font-size: 20px;
+}
+.simulation-steps b {
+    font-size: 14px;
+}
+.simulation-steps p {
+    font-size: 12px;
+    color: #9cbbd1;
+}
+.simulation-steps li > span {
+    color: #00ed7d;
+    background: #063627;
+    border-color: #0a7550;
+}
+.reset-panel p {
+    font-size: 13px;
+    color: #adc8df;
+}
+.reset-panel > .tiny {
+    font-size: 12px;
+}
+.toast {
+    border-color: #087752;
+    background: #06382bf5;
+    color: #d3ffed;
+    font-size: 14px;
+    border-radius: 7px;
+    left: calc(50% + 112px);
+}
+.modal {
+    background: #0c202c;
+    border: 1px solid #34576a;
+    color: white;
+}
+.modal p {
+    color: #adc7dc;
+}
+.modal-icon {
+    background: #113e34;
+    color: #00f08c;
+}
+.loading-logo {
+    color: #00ef7b;
+    background: #093b2c;
+    border-color: #12845a;
+}
+.loading-state p {
+    color: #9bbdd2;
+}
+@media (min-width: 1800px) {
+    .dashboard-page {
+        grid-template-columns: minmax(0, 1fr) 370px;
+    }
+    .device-column {
+        gap: 10px;
+    }
+    .quick-device,
+    .battery-widget,
+    .export-widget,
+    .auto-status {
+        padding: 16px;
+    }
+    .energy-scene {
+        height: 560px;
+    }
+    .dashboard-charts {
+        grid-template-columns: 1.8fr 1fr;
+    }
+    .power-panel .line-chart {
+        height: 210px;
+    }
+    .dashboard-page > .page-header {
+        margin-bottom: 20px;
+    }
+    .dashboard-metrics .metric-card {
+        height: 85px;
+    }
+}
+@media (max-width: 1450px) {
+    .sidebar {
+        width: 200px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .brand {
+        font-size: 23px;
+        margin-left: 9px;
+        margin-right: 0;
+    }
+    .nav-item {
+        font-size: 14px;
+        gap: 15px;
+        padding-left: 14px;
+    }
+    .nav-item.selected {
+        padding-left: 14px;
+    }
+    .app-shell > main {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+    .page-content {
+        padding: 20px 16px;
+    }
+    .dashboard-page {
+        grid-template-columns: minmax(0, 1fr) 300px;
+        gap: 0 12px;
+    }
+    .dashboard-page .page-title > div {
+        gap: 9px;
+    }
+    .dashboard-page .demo-badge {
+        font-size: 9px;
+        padding: 5px 6px;
+    }
+    .dashboard-page .environment-controls {
+        gap: 7px;
+    }
+    .dashboard-page .light-switch button {
+        min-width: 59px;
+        padding: 7px;
+        font-size: 11px;
+        gap: 6px;
+    }
+    .dashboard-page .light-switch button.active {
+        padding: 6px;
+    }
+    .dashboard-page .weather-trigger {
+        min-width: 103px;
+        font-size: 13px;
+        gap: 6px;
+        padding: 0 8px;
+        height: 39px;
+    }
+    .dashboard-page .temperature-switch button {
+        min-width: 32px;
+        padding: 7px 6px;
+        font-size: 11px;
+    }
+    .dashboard-page .temperature-switch button.active {
+        padding: 6px 5px;
+    }
+    .dashboard-page h1 {
+        font-size: 27px;
+    }
+    .dashboard-metrics {
+        gap: 9px;
+    }
+    .dashboard-metrics .metric-card {
+        padding: 12px 10px;
+        gap: 8px;
+        height: 74px;
+        min-height: 74px;
+    }
+    .dashboard-metrics .metric-icon {
+        width: 31px;
+    }
+    .dashboard-metrics .metric-icon svg {
+        width: 29px;
+    }
+    .dashboard-metrics .metric-caption {
+        font-size: 11px;
+    }
+    .dashboard-metrics .metric-value {
+        font-size: 23px;
+    }
+    .dashboard-metrics .metric-value > span {
+        font-size: 19px;
+    }
+    .quick-device h3,
+    .battery-widget h3,
+    .export-widget h3,
+    .auto-status h3 {
+        font-size: 16px;
+        gap: 10px;
+    }
+    .quick-device .source-options button {
+        font-size: 11px;
+        padding: 10px 3px;
+    }
+    .device-detail {
+        font-size: 11px;
+    }
+    .battery-auto {
+        font-size: 9px;
+        gap: 5px;
+    }
+    .battery-data b {
+        font-size: 12px;
+    }
+    .battery-data small {
+        font-size: 10px;
+    }
+    .battery-data {
+        gap: 5px;
+    }
+    .battery-data > div + div {
+        padding-left: 5px;
+    }
+    .dashboard-charts {
+        grid-template-columns: 1.65fr minmax(185px, 1fr);
+    }
+    .power-panel,
+    .today-panel {
+        padding: 13px;
+    }
+    .power-panel h3,
+    .today-panel h3 {
+        font-size: 15px;
+    }
+    .today-stat {
+        font-size: 11px;
+        gap: 7px;
+    }
+    .today-stat > strong {
+        font-size: 16px;
+    }
+    .today-stat small {
+        font-size: 14px;
+    }
+    .today-stat svg {
+        width: 24px;
+    }
+    .power-panel .chart-legend {
+        font-size: 10px;
+        gap: 11px;
+    }
+    .power-panel .line-chart {
+        height: 177px;
+    }
+    .control-card {
+        padding: 15px;
+    }
+    .control-card h3 {
+        font-size: 17px;
+        gap: 9px;
+    }
+    .control-card h3 > svg {
+        width: 24px;
+    }
+    .device-status {
+        font-size: 10px;
+        padding: 5px 7px;
+        gap: 5px;
+    }
+    .device-status i {
+        width: 8px;
+        height: 8px;
+    }
+    .control-card .source-options button {
+        font-size: 12px;
+    }
+    .control-summary {
+        gap: 15px;
+        padding: 14px;
+    }
+    .control-summary > div {
+        gap: 14px;
+    }
+    .control-summary > div > strong {
+        font-size: 14px;
+    }
+    .control-summary .danger-outline {
+        font-size: 12px;
+    }
+    .control-reading > strong {
+        font-size: 28px;
+    }
+    .scheduler-layout {
+        grid-template-columns: minmax(0, 1fr) 290px;
+    }
+    .schedule-toolbar {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    .day-picker {
+        order: 3;
+        width: 100%;
+    }
+    .day-picker button {
+        padding: 10px;
+    }
+    .analytics-kpi {
+        padding: 14px 12px;
+    }
+    .analytics-kpi .metric-caption {
+        font-size: 11px;
+        padding-left: 39px;
+        gap: 10px;
+    }
+    .analytics-kpi .metric-caption > span {
+        left: 12px;
+        top: 17px;
+    }
+    .analytics-kpi .metric-caption svg {
+        width: 29px;
+        height: 29px;
+    }
+    .analytics-kpi > strong {
+        font-size: 24px;
+        padding-left: 39px;
+    }
+    .analytics-kpi > strong small {
+        font-size: 16px;
+    }
+    .analytics-main {
+        grid-template-columns: 1.5fr 1fr;
+    }
+    .donut {
+        width: 153px;
+        height: 153px;
+        padding: 29px;
+    }
+    .donut-row {
+        gap: 14px;
+    }
+    .donut strong {
+        font-size: 26px;
+    }
+    .donut-legend {
+        min-width: 125px;
+    }
+    .donut-legend > div {
+        font-size: 11px;
+        gap: 7px;
+    }
+    .donut-legend b {
+        font-size: 14px;
+    }
+    .donut-legend svg {
+        width: 22px;
+    }
+    .analytics-main h3 {
+        font-size: 19px;
+    }
+    .analytics-secondary h3 {
+        font-size: 18px;
+    }
+    .thermal-stat > strong {
+        font-size: 27px;
+    }
+    .thermal-stat > strong small {
+        font-size: 16px;
+    }
+    .toast {
+        left: calc(50% + 100px);
+    }
+}
+@media (max-width: 1180px) {
+    .sidebar {
+        width: 176px;
+        padding-top: 23px;
+    }
+    .brand {
+        font-size: 21px;
+        margin-left: 5px;
+        margin-bottom: 27px;
+    }
+    .nav-item {
+        font-size: 13px;
+        gap: 12px;
+        padding: 12px 10px;
+    }
+    .nav-item.selected {
+        padding: 12px 10px;
+    }
+    .nav-item svg {
+        width: 22px;
+    }
+    .app-shell > main {
+        margin-left: 176px;
+        width: calc(100% - 176px);
+    }
+    .page-content {
+        padding: 18px 14px;
+    }
+    .dashboard-page {
+        grid-template-columns: minmax(0, 1fr) 275px;
+        gap: 0 10px;
+    }
+    .dashboard-page > .page-header {
+        flex-wrap: wrap;
+        gap: 12px;
+        min-height: 75px;
+        margin-bottom: 12px;
+    }
+    .dashboard-page h1 {
+        font-size: 28px;
+    }
+    .dashboard-page .environment-controls {
+        margin-left: auto;
+    }
+    .dashboard-metrics .metric-icon {
+        width: 24px;
+    }
+    .dashboard-metrics .metric-icon svg {
+        width: 24px;
+    }
+    .dashboard-metrics .metric-card {
+        gap: 6px;
+        padding: 10px 8px;
+    }
+    .dashboard-metrics .metric-caption {
+        font-size: 10px;
+    }
+    .dashboard-metrics .metric-value {
+        font-size: 21px;
+    }
+    .dashboard-metrics .metric-value > span {
+        font-size: 16px;
+    }
+    .energy-scene {
+        height: 370px;
+    }
+    .device-label > span {
+        font-size: 14px;
+    }
+    .device-label strong {
+        font-size: 21px;
+    }
+    .device-label em {
+        font-size: 11px;
+    }
+    .battery-label {
+        left: 55%;
+        width: 170px;
+    }
+    .battery-label strong {
+        font-size: 28px;
+    }
+    .battery-label > span {
+        font-size: 14px;
+    }
+    .battery-label > b {
+        font-size: 15px;
+    }
+    .battery-label em {
+        font-size: 13px;
+    }
+    .scene-grid-meter {
+        right: 0;
+    }
+    .scene-grid-meter > svg {
+        width: 42px;
+        height: 45px;
+    }
+    .scene-grid-meter b {
+        font-size: 15px;
+    }
+    .dashboard-charts {
+        grid-template-columns: 1fr;
+    }
+    .today-panel {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: space-between;
+    }
+    .today-panel > h3 {
+        width: 100%;
+        margin: 0;
+    }
+    .today-stat {
+        flex-wrap: wrap;
+        max-width: 31%;
+        font-size: 11px;
+        gap: 6px;
+    }
+    .today-stat > strong {
+        width: 100%;
+        padding-left: 31px;
+        font-size: 16px;
+    }
+    .power-panel .line-chart {
+        height: 185px;
+    }
+    .quick-device,
+    .battery-widget,
+    .export-widget,
+    .auto-status {
+        padding: 12px 10px;
+    }
+    .quick-device h3,
+    .battery-widget h3,
+    .export-widget h3,
+    .auto-status h3 {
+        font-size: 15px;
+        gap: 8px;
+    }
+    .battery-auto {
+        gap: 4px;
+        font-size: 8px;
+    }
+    .battery-auto b {
+        font-size: 8px;
+        padding: 4px;
+    }
+    .battery-widget h3 > svg {
+        width: 20px;
+    }
+    .battery-data b {
+        font-size: 11px;
+    }
+    .battery-data small {
+        font-size: 9px;
+    }
+    .battery-level strong {
+        font-size: 29px;
+    }
+    .device-reading {
+        font-size: 12px;
+    }
+    .device-detail {
+        font-size: 10px;
+    }
+    .device-reading strong {
+        font-size: 18px;
+    }
+    .control-card .panel-heading {
+        flex-wrap: wrap;
+    }
+    .control-card h3 {
+        font-size: 17px;
+    }
+    .control-summary > div {
+        gap: 11px;
+    }
+    .control-summary > div > svg {
+        width: 28px;
+    }
+    .control-summary span {
+        font-size: 11px;
+    }
+    .control-summary span strong {
+        font-size: 23px;
+    }
+    .control-summary > div:nth-child(3) {
+        display: none;
+    }
+    .page-title p {
+        font-size: 14px;
+    }
+    .analytics-page > .page-toolbar {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    .analytics-kpi .metric-caption {
+        padding: 0 0 0 30px;
+        font-size: 10px;
+    }
+    .analytics-kpi .metric-caption svg {
+        width: 24px;
+        height: 24px;
+    }
+    .analytics-kpi > strong {
+        font-size: 22px;
+        padding: 0;
+        margin: 10px 0;
+    }
+    .analytics-kpi > strong small {
+        font-size: 16px;
+    }
+    .analytics-main {
+        grid-template-columns: 1fr 1fr;
+    }
+    .analytics-main .chart-legend {
+        margin: 0;
+        justify-content: start;
+        font-size: 10px;
+    }
+    .donut-row {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .donut-legend {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3px;
+    }
+    .donut-legend > div {
+        padding: 5px 0;
+    }
+    .analytics-secondary {
+        grid-template-columns: 1.3fr 1fr 1fr;
+    }
+    .analytics-secondary > .panel {
+        padding: 17px 14px;
+    }
+    .thermal-stat {
+        grid-template-columns: 40% 60%;
+    }
+    .thermal-stat > strong {
+        font-size: 25px;
+    }
+    .thermal-stat > strong small {
+        font-size: 13px;
+    }
+    .thermal-stat > p {
+        font-size: 11px;
+    }
+    .thermal-stat > p .thermal-temp {
+        font-size: 24px;
+    }
+    .scheduler-page .page-toolbar {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    .scheduler-page .page-toolbar > div {
+        display: block;
+    }
+    .scheduler-page .page-toolbar > div > p {
+        display: none;
+    }
+    .scheduler-page .page-toolbar {
+        justify-content: space-between;
+    }
+    .scheduler-layout {
+        grid-template-columns: minmax(0, 1fr) 270px;
+    }
+    .timeline-panel {
+        padding: 16px 13px;
+    }
+    .block-editor {
+        padding: 17px 16px;
+    }
+    .repeat-days button {
+        width: 31px;
+        font-size: 10px;
+    }
+    .automation-cards {
+        gap: 10px;
+    }
+    .automation-cards > div {
+        padding: 12px;
+    }
+    .toast {
+        left: calc(50% + 88px);
+    }
+}
+@media (max-width: 940px) {
+    .sidebar {
+        width: 70px;
+        padding: 24px 9px;
+    }
+    .brand {
+        font-size: 0;
+        margin: 0 auto 27px;
+        width: 36px;
+        height: 35px;
+        position: relative;
+    }
+    .brand > span {
+        display: none !important;
+    }
+    .brand::before {
+        content: "TV";
+        font-size: 22px;
+        font-weight: 700;
+        color: #00e97b;
+    }
+    .nav-item,
+    .nav-item.selected {
+        justify-content: center;
+        padding: 13px 9px;
+        margin-bottom: 9px;
+    }
+    .nav-item > span,
+    .sidebar-bottom .nav-item > span,
+    .sidebar-connection {
+        display: none;
+    }
+    .nav-item svg {
+        width: 25px;
+    }
+    .app-shell > main {
+        margin-left: 70px;
+        width: calc(100% - 70px);
+    }
+    .dashboard-page {
+        grid-template-columns: minmax(0, 1fr) 265px;
+    }
+    .control-summary {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .control-summary .danger-outline {
+        margin-left: auto;
+    }
+    .control-cards {
+        gap: 10px;
+    }
+    .control-card {
+        padding: 13px;
+    }
+    .control-card h3 {
+        font-size: 16px;
+    }
+    .control-illustration {
+        height: 170px;
+    }
+    .control-card .source-options button {
+        font-size: 11px;
+    }
+    .control-reading > strong {
+        font-size: 25px;
+    }
+    .setting-line b {
+        font-size: 12px;
+    }
+    .setting-line small {
+        font-size: 10px;
+    }
+    .control-card .ev-level {
+        font-size: 12px;
+    }
+    .control-card .ev-level strong {
+        font-size: 18px;
+    }
+    .range-label {
+        font-size: 12px;
+    }
+    .range-label strong {
+        font-size: 16px;
+    }
+    .reserve-settings {
+        flex-wrap: wrap;
+    }
+    .reserve-settings .range-label {
+        width: 220px;
+    }
+    .analytics-kpis {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .analytics-kpi:last-child {
+        display: block;
+        grid-column: auto;
+    }
+    .analytics-kpi:last-child strong {
+        margin: 10px 0;
+        text-align: left;
+    }
+    .analytics-main {
+        grid-template-columns: 1.35fr 1fr;
+    }
+    .analytics-secondary {
+        grid-template-columns: 1fr 1fr;
+    }
+    .analytics-secondary .cumulative {
+        grid-column: 1/-1;
+    }
+    .analytics-secondary .thermal-stat {
+        grid-template-rows: 35px 110px auto;
+        min-height: 250px;
+        grid-template-columns: 45% 55%;
+    }
+    .thermal-stat > strong {
+        font-size: 29px;
+    }
+    .donut-row {
+        margin-top: 20px;
+    }
+    .scheduler-layout {
+        grid-template-columns: 1fr;
+    }
+    .schedule-toolbar {
+        flex-wrap: nowrap;
+    }
+    .day-picker {
+        order: initial;
+        width: auto;
+    }
+    .block-editor {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 20px;
+    }
+    .block-editor > .panel-heading,
+    .block-editor > .source-picker,
+    .block-editor > .form-pair,
+    .block-editor > .repeat-days,
+    .block-editor > .repeat-shortcuts,
+    .block-editor > p,
+    .block-editor > label {
+        grid-column: 1/-1;
+    }
+    .repeat-days {
+        justify-content: start;
+        gap: 7px;
+    }
+    .repeat-days button {
+        width: 40px;
+        font-size: 12px;
+    }
+    .repeat-shortcuts {
+        justify-content: start;
+        gap: 22px;
+    }
+    .simulation-tools {
+        flex-wrap: wrap;
+    }
+    .simulation-tools .environment-controls {
+        zoom: 0.85;
+    }
+    .toast {
+        left: calc(50% + 35px);
+    }
+}
+@media (max-width: 760px) {
+    .dashboard-page {
+        display: block;
+    }
+    .dashboard-page > .page-header {
+        min-height: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-bottom: 16px;
+    }
+    .dashboard-page .environment-controls {
+        margin-left: 0;
+        gap: 10px;
+    }
+    .dashboard-metrics {
+        gap: 9px;
+    }
+    .dashboard-main {
+        width: 100%;
+    }
+    .energy-scene {
+        height: 420px;
+    }
+    .device-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-top: 15px;
+        gap: 10px;
+    }
+    .quick-device,
+    .battery-widget,
+    .export-widget,
+    .auto-status {
+        padding: 15px;
+    }
+    .quick-device h3,
+    .battery-widget h3,
+    .export-widget h3,
+    .auto-status h3 {
+        font-size: 16px;
+    }
+    .device-detail {
+        font-size: 11px;
+    }
+    .battery-widget {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+    }
+    .battery-widget .panel-heading {
+        flex-wrap: wrap;
+    }
+    .battery-auto {
+        font-size: 10px;
+    }
+    .battery-auto b {
+        font-size: 10px;
+    }
+    .battery-data {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px 12px;
+    }
+    .battery-data > div + div {
+        border: 0;
+        padding: 0;
+    }
+    .battery-data b {
+        font-size: 15px;
+    }
+    .battery-data small {
+        font-size: 11px;
+    }
+    .battery-level strong {
+        font-size: 31px;
+    }
+    .device-column .auto-status {
+        grid-column: 1/-1;
+    }
+    .auto-status > div:not(.panel-heading) {
+        font-size: 13px;
+    }
+    .auto-status b {
+        font-size: 14px;
+    }
+    .auto-status > p {
+        font-size: 13px;
+    }
+    .dashboard-charts {
+        grid-template-columns: 1fr;
+    }
+    .today-panel {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        padding: 18px;
+    }
+    .today-stat {
+        font-size: 12px;
+    }
+    .today-stat > strong {
+        font-size: 18px;
+    }
+    .dashboard-metrics .metric-card {
+        height: 77px;
+    }
+    .dashboard-metrics .metric-caption {
+        font-size: 11px;
+    }
+    .dashboard-metrics .metric-value {
+        font-size: 22px;
+    }
+    .dashboard-metrics .metric-value > span {
+        font-size: 17px;
+    }
+    .control-cards {
+        grid-template-columns: 1fr;
+    }
+    .control-card {
+        padding: 19px;
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 0 20px;
+    }
+    .control-card > .panel-heading {
+        grid-column: 1/-1;
+        flex-wrap: nowrap;
+    }
+    .control-card h3 {
+        font-size: 20px;
+    }
+    .control-card .device-status {
+        font-size: 12px;
+    }
+    .control-illustration {
+        grid-column: 1;
+        grid-row: 2 / span 3;
+        height: 180px;
+        align-self: center;
+        margin: 0;
+    }
+    .control-reading,
+    .control-card > .source-options,
+    .control-card > .setting-line,
+    .control-card > .range-label,
+    .control-card > .device-mini-chart,
+    .control-card > .ev-level,
+    .control-card > .stop-charge,
+    .control-card > .control-footnote,
+    .control-schedule {
+        grid-column: 2;
+    }
+    .control-reading {
+        margin-top: 12px;
+    }
+    .control-card .source-options button {
+        font-size: 13px;
+    }
+    .control-bottom {
+        grid-template-columns: 1fr;
+    }
+    .control-summary > div > strong {
+        font-size: 15px;
+    }
+    .control-summary > div {
+        justify-content: start;
+    }
+    .control-summary .danger-outline {
+        font-size: 12px;
+    }
+    .control-summary > div:nth-child(2) {
+        padding-left: 15px;
+    }
+    .systems-online {
+        display: none;
+    }
+    .analytics-main {
+        grid-template-columns: 1fr;
+    }
+    .donut-row {
+        flex-wrap: nowrap;
+        gap: 35px;
+    }
+    .donut {
+        width: 185px;
+        height: 185px;
+        padding: 36px;
+    }
+    .donut-legend {
+        width: auto;
+        min-width: 190px;
+        gap: 12px;
+    }
+    .donut-legend > div {
+        font-size: 13px;
+        padding: 10px 0;
+    }
+    .donut-legend b {
+        font-size: 18px;
+    }
+    .analytics-kpi .metric-caption {
+        font-size: 12px;
+    }
+    .analytics-kpi > strong {
+        font-size: 27px;
+    }
+    .analytics-kpi > strong small {
+        font-size: 20px;
+    }
+    .analytics-main .chart-legend {
+        justify-content: end;
+        margin-top: -32px;
+        margin-bottom: 12px;
+        font-size: 11px;
+    }
+    .automation-cards {
+        grid-template-columns: 1fr;
+    }
+    .simulation-tools .environment-controls {
+        margin-left: auto;
+    }
+    .lab-intro h2 {
+        font-size: 24px;
+    }
+    .scenario-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .form-grid,
+    .input-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 560px) {
+    .sidebar {
+        width: 218px;
+        transform: translateX(-100%);
+        padding: 25px 12px;
+        box-shadow: none;
+    }
+    .sidebar.mobile-open {
+        transform: translateX(0);
+        box-shadow: 30px 0 70px #0009;
+    }
+    .sidebar .brand {
+        font-size: 25px;
+        display: block;
+        width: auto;
+        height: auto;
+        margin: 0 9px 25px;
+    }
+    .sidebar .brand::before {
+        display: none;
+    }
+    .sidebar .brand > span {
+        display: inline !important;
+    }
+    .sidebar .nav-item,
+    .sidebar .nav-item.selected {
+        justify-content: start;
+        padding: 13px 16px;
+        font-size: 15px;
+        gap: 16px;
+    }
+    .sidebar .nav-item > span {
+        display: inline;
+    }
+    .sidebar .sidebar-connection {
+        display: flex;
+    }
+    .app-shell > main {
+        width: 100%;
+        margin-left: 0;
+    }
+    .nav-scrim {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: #0008;
+        z-index: 29;
+    }
+    .page-content {
+        padding: 19px 12px;
+    }
+    .mobile-menu {
+        display: inline-flex !important;
+        width: 24px;
+        height: 30px;
+        padding: 0;
+        color: #c2d7e7;
+    }
+    .page-title > div {
+        gap: 9px;
+    }
+    .page-title h1,
+    .dashboard-page h1 {
+        font-size: 25px;
+        letter-spacing: -0.7px;
+    }
+    .page-title p {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-top: 8px;
+    }
+    .demo-badge,
+    .dashboard-page .demo-badge {
+        font-size: 8px;
+        padding: 5px 6px;
+    }
+    .page-header {
+        margin-bottom: 19px;
+    }
+    .dashboard-page > .page-header {
+        gap: 15px;
+        align-items: start;
+    }
+    .dashboard-page .environment-controls {
+        width: 100%;
+        justify-content: space-between;
+        gap: 7px;
+    }
+    .dashboard-page .light-switch button {
+        min-width: 63px;
+        font-size: 12px;
+        padding: 7px 8px;
+    }
+    .dashboard-page .light-switch button.active {
+        padding: 6px 7px;
+    }
+    .dashboard-page .weather-trigger {
+        min-width: 112px;
+        font-size: 14px;
+        height: 40px;
+    }
+    .dashboard-page .temperature-switch button {
+        min-width: 34px;
+        font-size: 12px;
+    }
+    .dashboard-metrics {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    .dashboard-metrics .metric-card {
+        padding: 14px;
+        gap: 13px;
+        height: 80px;
+    }
+    .dashboard-metrics .metric-icon {
+        width: 31px;
+    }
+    .dashboard-metrics .metric-icon svg {
+        width: 30px;
+    }
+    .dashboard-metrics .metric-caption {
+        font-size: 12px;
+    }
+    .dashboard-metrics .metric-value {
+        font-size: 25px;
+    }
+    .dashboard-metrics .metric-value > span {
+        font-size: 21px;
+    }
+    .energy-scene {
+        height: 325px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    .art-home {
+        left: -3%;
+        top: 4%;
+        width: 41%;
+        height: 46%;
+    }
+    .art-water {
+        left: 31%;
+        top: 10%;
+        width: 37%;
+        height: 39%;
+    }
+    .art-ev {
+        left: 67%;
+        top: 23%;
+        width: 34%;
+        height: 25%;
+    }
+    .art-battery {
+        left: 33%;
+        top: 69%;
+        width: 24%;
+        height: 29%;
+    }
+    .rooftop-label {
+        font-size: 10px;
+        left: 50%;
+        top: 9%;
+    }
+    .device-label {
+        width: 105px;
+    }
+    .device-label > span {
+        font-size: 12px;
+        gap: 4px;
+    }
+    .device-label > span > svg {
+        width: 17px;
+        height: 17px;
+    }
+    .device-label strong {
+        font-size: 18px;
+        padding: 2px 8px;
+    }
+    .device-label em {
+        font-size: 10px;
+        margin-top: 5px;
+    }
+    .home-label {
+        left: 19%;
+        top: 50%;
+    }
+    .water-label {
+        left: 49%;
+        top: 50%;
+    }
+    .ev-label {
+        left: 83%;
+        top: 50%;
+    }
+    .battery-label {
+        left: 57%;
+        top: 72%;
+        width: 137px;
+    }
+    .battery-label > span {
+        font-size: 13px;
+    }
+    .battery-label strong {
+        font-size: 25px;
+        margin: 3px 0;
+        padding: 0;
+    }
+    .battery-label > b {
+        font-size: 13px;
+    }
+    .battery-label em {
+        font-size: 11px;
+        margin-top: 5px;
+    }
+    .scene-grid-meter {
+        right: 0;
+        bottom: 2%;
+        gap: 2px;
+    }
+    .scene-grid-meter > svg {
+        width: 25px;
+        height: 36px;
+    }
+    .scene-grid-meter span {
+        font-size: 10px;
+    }
+    .scene-grid-meter b {
+        font-size: 12px;
+        margin-top: 3px;
+    }
+    .energy-paths .wire {
+        stroke-width: 1.7;
+    }
+    .energy-paths .wire.active {
+        stroke-width: 2 !important;
+    }
+    .power-panel {
+        padding: 16px 13px;
+    }
+    .power-panel h3 {
+        font-size: 17px;
+    }
+    .power-panel .chart-legend {
+        font-size: 11px;
+        gap: 16px;
+    }
+    .power-panel .line-chart {
+        height: 186px;
+    }
+    .today-panel {
+        padding: 17px 14px;
+        gap: 16px 9px;
+    }
+    .today-panel > h3 {
+        font-size: 17px;
+    }
+    .today-stat {
+        max-width: 31%;
+        font-size: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+    }
+    .today-stat > span:first-child {
+        width: 23px;
+    }
+    .today-stat svg {
+        width: 23px;
+    }
+    .today-stat > strong {
+        font-size: 16px;
+        padding-left: 0;
+        width: 100%;
+        margin: 0;
+    }
+    .today-stat small {
+        font-size: 13px;
+    }
+    .device-column {
+        gap: 10px;
+        grid-template-columns: 1fr;
+    }
+    .quick-device,
+    .battery-widget,
+    .export-widget,
+    .auto-status {
+        padding: 15px;
+    }
+    .quick-device h3,
+    .battery-widget h3,
+    .export-widget h3,
+    .auto-status h3 {
+        font-size: 18px;
+        gap: 12px;
+    }
+    .quick-device h3 > svg,
+    .battery-widget h3 > svg {
+        width: 25px;
+    }
+    .quick-device .source-options {
+        flex-wrap: nowrap;
+    }
+    .quick-device .source-options button {
+        min-width: 0;
+        font-size: 13px;
+        padding: 12px 4px;
+    }
+    .device-detail {
+        font-size: 12px;
+    }
+    .device-reading {
+        font-size: 14px;
+    }
+    .device-reading strong {
+        font-size: 21px;
+    }
+    .ev-level {
+        font-size: 14px;
+    }
+    .ev-status {
+        font-size: 14px;
+    }
+    .battery-widget {
+        grid-column: auto;
+        grid-row: auto;
+        gap: 0;
+        display: block;
+    }
+    .battery-widget .panel-heading {
+        flex-wrap: nowrap;
+    }
+    .battery-data {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        margin-top: 14px;
+    }
+    .battery-data > div + div {
+        border-left: 1px solid #1c3644;
+        padding-left: 8px;
+    }
+    .battery-data b {
+        font-size: 14px;
+    }
+    .battery-data small {
+        font-size: 11px;
+    }
+    .battery-auto {
+        font-size: 11px;
+        gap: 8px;
+    }
+    .battery-auto b {
+        font-size: 10px;
+    }
+    .battery-level strong {
+        font-size: 35px;
+    }
+    .battery-level .progress-track {
+        height: 22px;
+    }
+    .export-widget {
+        display: flex;
+        flex-wrap: nowrap;
+        min-height: 93px;
+    }
+    .export-widget p,
+    .export-widget small {
+        font-size: 13px;
+    }
+    .auto-status > div:not(.panel-heading) {
+        font-size: 13px;
+        padding: 4px 0;
+    }
+    .auto-status b {
+        font-size: 14px;
+    }
+    .auto-status > p {
+        font-size: 13px;
+    }
+    .page-footer {
+        font-size: 9px;
+        gap: 10px;
+    }
+    .simulation-tools {
+        margin-top: 20px;
+        padding-top: 15px;
+        gap: 15px;
+    }
+    .simulation-clock {
+        flex-direction: column;
+        align-items: start;
+        gap: 14px;
+        font-size: 11px;
+        width: 100%;
+    }
+    .simulation-clock > div {
+        gap: 7px;
+        width: 100%;
+        justify-content: start;
+    }
+    .simulation-clock button {
+        font-size: 11px;
+    }
+    .simulation-tools .environment-controls {
+        zoom: 1;
+        width: 100%;
+        justify-content: space-between;
+        gap: 6px;
+    }
+    .simulation-tools .light-switch button {
+        min-width: 60px;
+        padding: 7px;
+        font-size: 11px;
+        gap: 6px;
+    }
+    .simulation-tools .light-switch button.active {
+        padding: 6px;
+    }
+    .simulation-tools .weather-trigger {
+        font-size: 12px;
+        min-width: 103px;
+        height: 38px;
+    }
+    .simulation-tools .temperature-switch button {
+        min-width: 34px;
+        padding: 7px;
+        font-size: 12px;
+    }
+    .simulation-tools .temperature-switch button.active {
+        padding: 6px;
+    }
+    .control-summary {
+        padding: 15px;
+        gap: 14px;
+    }
+    .control-summary > div {
+        flex: auto;
+        gap: 12px;
+    }
+    .control-summary > div:nth-child(2) {
+        border: 0;
+        padding: 0;
+    }
+    .control-summary span {
+        font-size: 12px;
+    }
+    .control-summary span strong {
+        font-size: 24px;
+    }
+    .control-summary .danger-outline {
+        width: 100%;
+        font-size: 14px;
+    }
+    .control-card {
+        display: flex;
+        padding: 18px;
+        gap: 0;
+    }
+    .control-card > .panel-heading {
+        flex-wrap: nowrap;
+    }
+    .control-card h3 {
+        font-size: 20px;
+    }
+    .device-status {
+        font-size: 11px !important;
+    }
+    .control-illustration {
+        height: 235px;
+        width: 100%;
+    }
+    .control-card:nth-child(2) .control-illustration .device-art {
+        width: 76%;
+    }
+    .control-reading {
+        margin: 0 0 14px;
+    }
+    .control-reading > small {
+        font-size: 14px;
+    }
+    .control-reading > strong {
+        font-size: 32px;
+    }
+    .control-card .source-options button {
+        font-size: 14px;
+        min-height: 45px;
+    }
+    .setting-line b {
+        font-size: 14px;
+    }
+    .setting-line small {
+        font-size: 12px;
+    }
+    .range-label {
+        font-size: 14px;
+    }
+    .range-label strong {
+        font-size: 19px;
+    }
+    .control-card .ev-level {
+        font-size: 14px;
+    }
+    .control-card .ev-level strong {
+        font-size: 21px;
+    }
+    .device-mini-chart .line-chart {
+        height: 160px;
+    }
+    .control-footnote {
+        font-size: 12px;
+    }
+    .control-summary .primary {
+        font-size: 14px;
+    }
+    .control-bottom > .panel {
+        padding: 18px;
+    }
+    .grid-export-body {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .grid-export-body > div:last-child {
+        border: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    .grid-export-body strong {
+        font-size: 27px;
+        margin: 0;
+    }
+    .export-setting {
+        font-size: 14px;
+        gap: 16px;
+    }
+    .activity-list b {
+        font-size: 12px;
+    }
+    .activity-list small {
+        font-size: 10px;
+    }
+    .reserve-settings {
+        padding: 18px;
+        gap: 15px;
+    }
+    .reserve-settings .range-label {
+        width: 100%;
+        font-size: 13px;
+    }
+    .reserve-settings > span {
+        font-size: 12px;
+    }
+    .scheduler-page .page-toolbar {
+        margin: 0 0 15px;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+    }
+    .scheduler-page .page-toolbar .pill {
+        font-size: 9px;
+        padding: 6px;
+    }
+    .scheduler-page .page-toolbar .primary {
+        font-size: 12px;
+        padding: 11px 13px;
+    }
+    .schedule-toolbar {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .schedule-toolbar .segmented {
+        padding: 2px;
+    }
+    .schedule-toolbar .segmented button {
+        padding: 8px 17px;
+        min-width: 66px;
+        font-size: 13px;
+    }
+    .schedule-toolbar .segmented button.active {
+        padding: 7px 16px;
+    }
+    .day-picker {
+        order: 3;
+        width: 100%;
+        gap: 0;
+    }
+    .day-picker button {
+        font-size: 12px;
+        padding: 10px 8px;
+    }
+    .timeline-panel {
+        padding: 16px 11px;
+    }
+    .timeline-row,
+    .timeline-axis {
+        grid-template-columns: 88px 1fr;
+        min-width: 670px;
+        gap: 10px;
+    }
+    .timeline-label .device-art {
+        width: 83px;
+        height: 70px;
+    }
+    .timeline-track {
+        height: 72px;
+    }
+    .timeline-label b {
+        font-size: 12px;
+    }
+    .timeline-footer {
+        gap: 12px;
+    }
+    .timeline-footer .chart-legend {
+        font-size: 10px;
+        gap: 15px;
+    }
+    .timeline-footer > small {
+        font-size: 9px;
+    }
+    .inline-note {
+        font-size: 11px;
+    }
+    .block-editor {
+        padding: 20px;
+    }
+    .block-editor h3 {
+        font-size: 23px;
+    }
+    .block-editor > .primary {
+        grid-column: 1/-1;
+    }
+    .block-editor > .danger-text {
+        grid-column: 1/-1;
+    }
+    .repeat-days {
+        gap: 5px;
+        justify-content: space-between;
+    }
+    .repeat-days button {
+        width: 36px;
+        font-size: 11px;
+    }
+    .block-editor label,
+    .field-label {
+        font-size: 14px;
+    }
+    .block-editor select {
+        font-size: 14px;
+    }
+    .block-editor > .tiny {
+        font-size: 11px;
+    }
+    .schedule-summary {
+        padding: 18px;
+    }
+    .schedule-summary h3 {
+        font-size: 19px;
+    }
+    .schedule-summary .pill {
+        font-size: 9px;
+    }
+    .automation-cards > div {
+        padding: 15px;
+    }
+    .automation-cards b {
+        font-size: 14px;
+    }
+    .automation-cards small {
+        font-size: 12px;
+    }
+    .analytics-page > .page-toolbar {
+        flex-direction: row;
+        margin: 0 0 17px;
+        min-height: 0;
+    }
+    .analytics-page .page-toolbar .button-row {
+        width: 100%;
+        gap: 10px;
+    }
+    .analytics-page .compact-select {
+        font-size: 13px;
+        padding: 11px;
+        flex: 1;
+    }
+    .analytics-page .secondary {
+        font-size: 13px;
+        padding: 11px 15px;
+    }
+    .analytics-kpis {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    .analytics-kpi {
+        padding: 15px;
+        min-height: 152px;
+    }
+    .analytics-kpi .metric-caption {
+        font-size: 12px;
+        padding-left: 34px;
+        min-height: 30px;
+    }
+    .analytics-kpi .metric-caption > span {
+        top: 17px;
+        left: 15px;
+    }
+    .analytics-kpi .metric-caption svg {
+        width: 25px;
+        height: 25px;
+    }
+    .analytics-kpi > strong {
+        font-size: 27px;
+        padding: 0;
+        margin: 8px 0;
+    }
+    .analytics-kpi > strong small {
+        font-size: 18px;
+    }
+    .analytics-kpi:last-child {
+        grid-column: 1/-1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 15px;
+        align-items: center;
+        min-height: 120px;
+    }
+    .analytics-kpi:last-child .metric-caption {
+        padding-left: 35px;
+        min-height: 0;
+    }
+    .analytics-kpi:last-child > strong {
+        margin: 0;
+        text-align: right;
+    }
+    .analytics-kpi:last-child .kpi-spark {
+        grid-column: 1/-1;
+        margin-top: 6px;
+        height: 32px;
+    }
+    .analytics-kpi:last-child > .tiny {
+        grid-column: 1/-1;
+        margin-top: 3px;
+    }
+    .analytics-main > .panel,
+    .analytics-secondary > .panel,
+    .analytics-secondary + .panel {
+        padding: 18px 15px;
+    }
+    .analytics-main h3 {
+        font-size: 20px;
+    }
+    .analytics-main .chart-legend {
+        margin: 0 0 9px;
+        font-size: 11px;
+        justify-content: start;
+    }
+    .analytics-main .panel-heading {
+        margin-bottom: 12px;
+    }
+    .bar-chart {
+        height: 240px;
+        gap: 12px;
+        padding-left: 25px;
+    }
+    .bar-total {
+        font-size: 10px;
+    }
+    .bar-day {
+        font-size: 11px;
+    }
+    .donut-row {
+        gap: 20px;
+        flex-wrap: nowrap;
+    }
+    .donut {
+        width: 155px;
+        height: 155px;
+        padding: 30px;
+    }
+    .donut strong {
+        font-size: 29px;
+    }
+    .donut span {
+        font-size: 12px;
+    }
+    .donut-legend {
+        min-width: 130px;
+        gap: 8px;
+    }
+    .donut-legend > div {
+        font-size: 11px;
+        gap: 8px;
+    }
+    .donut-legend b {
+        font-size: 14px;
+    }
+    .donut-legend svg {
+        width: 22px;
+        height: 22px;
+    }
+    .donut-legend small {
+        font-size: 11px;
+    }
+    .analytics-secondary {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .analytics-secondary .cumulative {
+        grid-column: auto;
+    }
+    .analytics-secondary h3 {
+        font-size: 20px;
+    }
+    .analytics-secondary .thermal-stat {
+        min-height: 250px;
+        grid-template-columns: 45% 55%;
+        grid-template-rows: 35px 110px auto;
+    }
+    .thermal-art {
+        max-height: 185px;
+        width: 175%;
+        object-fit: contain;
+    }
+    .thermal-stat > strong {
+        font-size: 36px;
+    }
+    .thermal-stat > strong small {
+        font-size: 22px;
+    }
+    .thermal-stat > p {
+        font-size: 14px;
+    }
+    .thermal-stat > p .thermal-temp {
+        font-size: 30px;
+        margin-top: 12px;
+    }
+    .export-stat {
+        min-height: 245px;
+    }
+    .export-stat .panel-heading {
+        flex-wrap: nowrap;
+    }
+    .export-stat > strong {
+        font-size: 35px;
+    }
+    .export-stat > p,
+    .export-stat > small {
+        font-size: 13px;
+    }
+    .storage-totals {
+        font-size: 11px;
+        gap: 13px;
+    }
+    .export-history {
+        padding: 18px 15px;
+    }
+    .export-history table {
+        font-size: 12px;
+    }
+    .export-history td,
+    .export-history th {
+        padding: 12px 5px;
+        font-size: 11px;
+    }
+    .empty-history {
+        font-size: 13px;
+        gap: 10px;
+    }
+    .empty-history > span > small {
+        font-size: 11px;
+    }
+    .lab-intro {
+        margin: 20px 0;
+        gap: 14px;
+    }
+    .lab-intro h2 {
+        font-size: 22px;
+    }
+    .lab-intro p {
+        font-size: 13px;
+    }
+    .lab-symbol {
+        width: 44px;
+        height: 44px;
+    }
+    .lab-intro .eyebrow {
+        font-size: 9px;
+    }
+    .scenario-grid {
+        gap: 11px;
+    }
+    .scenario-grid > button {
+        padding: 17px;
+    }
+    .scenario-grid b {
+        font-size: 14px;
+    }
+    .scenario-grid span {
+        font-size: 12px;
+    }
+    .lab-form {
+        padding: 20px 16px;
+    }
+    .lab-form h3 {
+        font-size: 20px;
+    }
+    .lab-form .tiny {
+        font-size: 11px;
+    }
+    .input-grid {
+        gap: 20px 12px;
+    }
+    .input-grid > label {
+        font-size: 12px;
+    }
+    .unit-input input {
+        font-size: 14px;
+    }
+    .unit-input > span {
+        font-size: 10px;
+    }
+    .lab-form .setting-line {
+        margin: 25px 0;
+    }
+    .simulation-steps {
+        grid-template-columns: 1fr;
+    }
+    .lab-bottom > .panel {
+        padding: 20px;
+    }
+    .toast {
+        left: 50%;
+        font-size: 12px;
+        padding: 13px 16px;
+        white-space: normal;
+        min-width: 220px;
+        max-width: 90%;
+    }
+    .modal {
+        max-width: calc(100% - 30px);
+        padding: 24px;
+    }
+    .modal .primary,
+    .modal .secondary {
+        font-size: 12px;
+        padding: 11px 13px;
+    }
+    .modal p {
+        font-size: 13px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .energy-paths .wire {
+        animation: none !important;
+    }
+}
+.energy-scene.flow-paused .energy-paths .wire.active {
+    animation-play-state: paused;
+}
+.ev-reset {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    color: #8dd9f3;
+    border: 1px solid #275365;
+    border-radius: 6px;
+    padding: 8px 11px;
+    font-size: 12px;
+    margin-top: 12px;
+    background: #0c202c;
+}
+.ev-reset:hover:not(:disabled) { background: #123344; border-color: #54bddc; }
+.quick-device .ev-reset { width: 100%; font-size: 11px; padding: 6px 9px; margin-top: 10px; }
+.control-card > .ev-reset { grid-column: 2; }
+.ev-test-reset { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--border); padding-bottom: 22px; margin-bottom: 24px; }
+.ev-test-reset p { margin-top: 8px; line-height: 1.5; }
+.ev-test-reset .ev-reset { flex-shrink: 0; margin: 0; }
+@media (max-width: 560px) { .ev-test-reset { align-items: start; flex-direction: column; gap: 12px; } }
