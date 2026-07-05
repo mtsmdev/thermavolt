@@ -1,0 +1,20 @@
+{
+  "generator": "Built-in image_gen",
+  "revisions": [
+    {
+      "id": "01-dark-energy",
+      "path": "C:\\Users\\mhtsm\\.codex\\generated_images\\01a187a0-bead-77b3-b604-1a6d1c9a7feb\\exec-f8fdc29e-a5f1-4897-92ac-bde91c0183b3.png",
+      "prompt": "Use case: ui-mockup. Edit this ThermaVoltFlow dashboard mockup. Preserve the complete existing layout, composition, dark theme, 3D objects, texts, controls, all numbers, solar paths and charts. Make ONLY this targeted state-consistency correction: the bottom utility-grid bus and its three fallback branches must be thin muted gray dashed lines, WITHOUT arrowheads, bright glow or moving-looking particles, since all three devices are in Solar mode and the Grid import reads 0.0 kW. Keep the green solar paths bright and directional. Preserve the three independent dedicated solar installations. In the history chart show a small amber grid-import trace around 0.6 kW during 00–06 and 18–24 and zero around noon, because current zero import does not mean zero grid use all day. Do not change any other elements. Return the complete corrected screenshot."
+    },
+    {
+      "id": "02-light-studio",
+      "path": "C:\\Users\\mhtsm\\.codex\\generated_images\\01a187a0-bead-77b3-b604-1a6d1c9a7feb\\exec-4d9c6033-614a-490c-90b9-9ef514a97d29.png",
+      "prompt": "Use case: ui-mockup. Edit this ThermaVoltFlow dashboard mockup. Preserve the complete existing layout, warm-white theme, typography, three independent cards, beautiful 3D vignettes, controls, charts and schedules. Make ONLY the following targeted live-data corrections. Each of the three green Solar production readings currently incorrectly repeats the global total 7.3 kW. Change the green Solar production reading in the Home card to exactly \"2.6 kW\", in the Water card to exactly \"1.5 kW\", and in the EV card to exactly \"3.2 kW\". Keep the black consumption readings unchanged. Next, the utility-grid branch in each 3D vignette must be a subtle gray dashed inactive connection WITHOUT arrowheads, bright glow or particles, because import is 0.0 kW and export is OFF. Keep solar paths bright, correctly directed from each dedicated solar installation toward its own load. Keep all other interface content and layout unchanged. Return the complete corrected screenshot."
+    },
+    {
+      "id": "03-technical-blueprint",
+      "path": "C:\\Users\\mhtsm\\.codex\\generated_images\\01a187a0-bead-77b3-b604-1a6d1c9a7feb\\exec-4ec3dd7a-782d-4673-920e-7dbc2f4e0c0c.png",
+      "prompt": "Use case: ui-mockup. Edit this ThermaVoltFlow dashboard mockup. Preserve its complete layout, cool light blueprint workspace, navy sidebar, three independent 3D solar-to-load lanes, controls and chart. Correct ONLY the inconsistent numeric/state details: change the small \"Home solar\" output from \"3.1 kW\" to \"2.6 kW\"; \"Water heating solar\" from \"1.8 kW\" to \"1.5 kW\"; \"EV charging solar\" from \"2.4 kW\" to \"3.2 kW\". These must match their own independent load readings, and the total remains 7.3 kW. Change utility fallback connections to thin muted gray dashed lines without arrowheads or bright glow, since Grid import is 0.0 kW. Keep cyan solar paths bright and directional. Replace the date following Tomorrow in Schedule preview with just the word \"Tomorrow\", removing the invented old date entirely. In the 24-hour history chart add modest amber grid import around 0.6 kW in early morning and late evening, with zero at noon. Keep all other layout, typography and source selectors unchanged. Return the complete corrected screenshot."
+    }
+  ]
+}

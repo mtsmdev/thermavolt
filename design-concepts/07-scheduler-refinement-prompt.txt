@@ -1,0 +1,10 @@
+Generator: built-in image_gen
+
+Use case: precise-object-edit. Edit the attached Smart Scheduler interface screenshot. Preserve all styling, typography, panel sizes, sidebar, controls, illustrations, exact text and overall layout.
+Correct ONLY the geometry of the colored time blocks so that their boundaries precisely correspond to their existing printed time labels on the shared 00–24 time axis. Let the left edge of the time grid be 0% and the right edge be 100%. Hour 06 is 25%, 08 is 33.333%, 11 is 45.833%, 16 is 66.667%, 18 is 75%.
+HOME row already correct: preserve Grid00–07 (0–29.167%), Solar07–17 (29.167–70.833%), Grid17–24 (70.833–100%).
+WATER row: Off00–08 (0–33.333%), Solar08–16 (33.333–66.667%), Grid16–18 (66.667–75%), Off18–24 (75–100%). In particular extend its green Solar block to hour16, one hour after the 15 grid line; its amber Grid block must be exactly two hours wide.
+EV row: Grid00–06 (0–25%), Off06–11 (25–45.833%), Solar11–16 (45.833–66.667%), Off16–24 (66.667–100%). In particular its green Solar block must end at exactly the SAME horizontal coordinate as the water Solar block (hour16), not at hour17.
+Keep the existing block labels and start/end text unchanged. Do not change any of the schedule values.
+Simplify the legend to exactly three entries: green "Solar", amber "Grid", gray "Off"; remove the unused orange Thermal legend entry. Preserve the small water clarification text below.
+Return the complete corrected screenshot.
