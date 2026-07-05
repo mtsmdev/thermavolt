@@ -1,0 +1,5 @@
+Generator: built-in image_gen
+
+Use case: precise-object-edit / text-localization.
+Edit the attached ThermaVoltFlow dashboard image. Change exactly ONE text label in the BOTTOM-RIGHT "Schedule preview" card: on the row "17:00 – 22:00", replace "Battery (charging)" with "Battery (supply)". This is tomorrow's home energy-source schedule, so it means supplying the home from stored energy.
+Preserve the top battery's current status "Charging · 2.4 kW", the Battery storage card "Charging 2.4 kW", and the bottom-left chart legend "Battery (charging)" completely unchanged, since those refer to current charging and history. Preserve all other pixels, illustration, layout, colors, controls, °C/°F switch, text, values and typography. Return the complete full-size dashboard screenshot.
