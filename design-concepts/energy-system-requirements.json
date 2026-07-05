@@ -1,0 +1,266 @@
+{
+  "project": "ThermaVoltFlow",
+  "stage": "Design and requirements; application implementation has not started",
+  "purpose": "Learning web application with simulated devices, generated data and manual inputs",
+  "revision": "Shared rooftop PV, automatic home-only battery backup, selectable simulated weather and day/night",
+  "requestedFeatures": {
+    "temperatureUnits": {
+      "options": [
+        "Celsius",
+        "Fahrenheit"
+      ],
+      "default": "Celsius",
+      "scope": "Global preference across dashboard, controls, scheduler, charts, tooltips and reports",
+      "storageUnit": "Celsius",
+      "displayConversion": "F = C * 9 / 5 + 32",
+      "inputConversion": "C = (F - 32) * 5 / 9",
+      "persistence": "User preference, or browser preference for an anonymous demo",
+      "examples": [
+        {
+          "celsius": 54,
+          "fahrenheit": 129.2
+        },
+        {
+          "celsius": 55,
+          "fahrenheit": 131
+        }
+      ]
+    },
+    "energySources": {
+      "rooftopSolarPV": {
+        "count": 1,
+        "supplies": [
+          "Home electricity",
+          "EV charging"
+        ],
+        "charges": "Home storage battery from surplus PV",
+        "visual": "Solar panels on the house roof only; no panels or canopy over the car"
+      },
+      "solarWaterHeater": {
+        "type": "Independent solar thermal collector",
+        "visual": "Horizontal tank above inclined evacuated tubes",
+        "backupSource": "Grid electricity",
+        "batterySupplyAllowed": false
+      },
+      "homeBattery": {
+        "suppliesOnly": [
+          "Home electricity"
+        ],
+        "prohibitedDestinations": [
+          "EV charging",
+          "Water heater electric backup",
+          "Grid export"
+        ],
+        "mode": "Automatic",
+        "triggers": [
+          "Household demand exceeds available rooftop solar power",
+          "Night with insufficient solar",
+          "Cloud-reduced solar causing a household supply deficit"
+        ],
+        "controlRule": "Respond to current power availability and home demand, rather than fixed time windows or cloud labels alone",
+        "scheduleAllowed": false,
+        "manualSourceSelectionRequired": false,
+        "userVisibleData": [
+          "Charge percentage",
+          "Stored energy in kWh",
+          "Capacity in kWh",
+          "Charging / Discharging / Idle status",
+          "Charge or discharge power in kW",
+          "Minimum reserve percentage",
+          "Current automatic action and reason",
+          "Charge history",
+          "Energy charged and discharged"
+        ]
+      },
+      "grid": {
+        "manualSelectionAvailable": true,
+        "automaticHomeFallback": "Configurable proposal; only used when explicitly enabled"
+      },
+      "export": {
+        "enabledByDefault": false,
+        "source": "Surplus rooftop PV only",
+        "userOptInRequired": true
+      }
+    },
+    "controlModes": {
+      "home": {
+        "options": [
+          "Auto",
+          "Grid",
+          "Off"
+        ],
+        "autoMeaning": "Use rooftop solar for the home and automatically cover any home deficit from the battery within limits"
+      },
+      "ev": {
+        "options": [
+          "Solar",
+          "Grid",
+          "Off",
+          "Schedule"
+        ],
+        "batterySourceAllowed": false,
+        "solarSource": "Same rooftop PV installation as the home"
+      },
+      "water": {
+        "options": [
+          "Solar",
+          "Grid",
+          "Off",
+          "Schedule"
+        ],
+        "solarMeaning": "Solar thermal heating",
+        "gridMeaning": "Electric backup heating",
+        "batterySourceAllowed": false
+      }
+    },
+    "simulationEnvironmentControls": {
+      "location": "Dashboard header, next to the global temperature-unit switch",
+      "weather": {
+        "interaction": "Click the current weather badge to open a dropdown",
+        "options": [
+          "Sunny",
+          "Cloudy",
+          "Rainy"
+        ],
+        "current": "Cloudy",
+        "visual": "Weather icon, selected label and dropdown chevron; selected menu item has a checkmark"
+      },
+      "lighting": {
+        "interaction": "Two-option segmented toggle",
+        "options": [
+          "Day",
+          "Night"
+        ],
+        "current": "Day",
+        "independence": "Weather and day/night are separate inputs; preserve the chosen weather when switching Day/Night"
+      },
+      "behavior": {
+        "day": "Weather modifies simulated available sunlight and rooftop PV output",
+        "night": "PV output and incoming solar thermal heat are zero for every weather choice",
+        "battery": "Automatically supply only the home's actual solar deficit, respecting reserve, power limits and available stored energy",
+        "preserveState": "Changing weather or day/night does not reset battery energy, EV charge, water temperature, schedules or existing history",
+        "continuity": "Power readings respond on the next simulation step; stored energy, charge percentage and water temperature evolve over simulated time",
+        "history": "Append the new readings and log environment-control changes; do not rewrite past readings",
+        "clock": "These controls force environmental conditions. They do not silently change or rewind the simulation clock; schedule evaluation continues against that explicit clock.",
+        "persistence": "Keep the settings within each visitor's isolated demo session"
+      }
+    }
+  },
+  "proposedSimulationRules": {
+    "allocationPriority": [
+      "Serve the home's demand from rooftop solar",
+      "If solar is insufficient for the home, use the home battery within reserve and power limits",
+      "Allow EV solar charging only from remaining rooftop PV; never discharge the home battery to cover EV demand",
+      "Charge the home battery with PV surplus after selected loads",
+      "Export remaining PV surplus only when enabled; otherwise curtail"
+    ],
+    "autoHomePowerEquation": "batteryOutput = min(max(0, homeDemand - solarAllocatedToHome), allowedDischargePower, energyAvailableAboveReserve / timestepHours)",
+    "nightBehavior": "Solar availability becomes zero; Auto mode uses battery for home demand subject to its limits",
+    "cloudyBehavior": "Cloud conditions reduce simulated PV availability; discharge occurs only when the home has an actual solar deficit",
+    "batteryBehavior": [
+      "Keep stored energy within capacity",
+      "Respect charge/discharge power limits and minimum reserve",
+      "Do not charge and discharge simultaneously",
+      "Apply charging/discharging losses",
+      "Never use battery output for the EV, water backup or grid"
+    ],
+    "lowBatteryBehavior": "Use grid only if configured fallback is enabled; otherwise show the home's unmet load or limited supply",
+    "gridChargingDefault": false,
+    "batteryExportAllowed": false,
+    "surplusSolarExportDefault": false,
+    "scheduling": "Battery operation has no scheduled source blocks or charging/discharging windows. Smart Scheduler controls EV charging and water backup; home Auto responds continuously to current conditions.",
+    "temperatureBehavior": "Changing display units does not change stored physical values",
+    "waterOffBehavior": "Disables powered backup heating; passive thermal collection and heat loss continue",
+    "reproducibility": "Repeatable simulation clock and random seed; calculate analytics from saved readings",
+    "weatherInput": "Dashboard dropdown: Sunny, Cloudy or Rainy. Dashboard Day/Night toggle independently forces the daylight condition; no live weather API is needed.",
+    "manualInputs": [
+      "Weather / sunshine",
+      "House demand",
+      "Rooftop PV capacity",
+      "Starting home battery percentage",
+      "Home battery capacity",
+      "Charge/discharge limits",
+      "Minimum reserve",
+      "EV battery percentage",
+      "Water temperature"
+    ],
+    "scenarios": [
+      "Sunny: rooftop PV supplies home and EV, surplus charges home battery",
+      "Cloudy: battery covers home shortfall; EV in Solar mode pauses or reduces charging",
+      "Night: battery powers home; EV uses grid only if selected or scheduled",
+      "Battery reserve reached: configured grid fallback or limited home supply",
+      "Cloudy but sufficient PV: battery stays idle or charges",
+      "Click weather dropdown and switch Sunny / Cloudy / Rainy while preserving battery state",
+      "Switch to Night under any weather: solar becomes zero and home automatic backup responds",
+      "Switch to Day and Sunny: PV rises and surplus can charge the home battery"
+    ],
+    "illustrativeWeatherPresets": {
+      "disclaimer": "Configurable simulation examples, not weather forecasts or engineering predictions",
+      "rooftopCapacityKW": 8,
+      "day": {
+        "sunny": {
+          "factor": 1,
+          "availablePVKW": 8
+        },
+        "cloudy": {
+          "factor": 0.15,
+          "availablePVKW": 1.2
+        },
+        "rainy": {
+          "factor": 0.05,
+          "availablePVKW": 0.4
+        }
+      },
+      "night": {
+        "availablePVKW": 0,
+        "appliesToAllWeather": true
+      },
+      "householdExampleKW": 2.6,
+      "batteryOutputExamplesKW": {
+        "dayCloudy": 1.4,
+        "dayRainy": 2.2,
+        "night": 2.6
+      },
+      "batteryCondition": "Examples assume sufficient stored energy above reserve and adequate discharge power"
+    }
+  },
+  "illustrativeDashboardSnapshot": {
+    "disclaimer": "Simulation example values, not hardware specifications",
+    "weather": "Cloudy",
+    "homeMode": "Auto",
+    "solarElectricityKW": 1.2,
+    "homeLoadKW": 2.6,
+    "evLoadKW": 0,
+    "evMode": "Solar",
+    "evState": "Paused: low solar",
+    "evBatteryPercentage": 68,
+    "waterBackupKW": 0,
+    "waterTemperatureC": 54,
+    "gridImportKW": 0,
+    "gridExportKW": 0,
+    "battery": {
+      "name": "Home battery",
+      "capacityKWh": 10,
+      "storedKWh": 7.6,
+      "percentage": 76,
+      "state": "Discharging",
+      "outputKW": 1.4,
+      "reservePercentage": 20,
+      "reason": "Solar shortfall",
+      "scheduled": false
+    },
+    "balance": "1.2 kW rooftop solar + 1.4 kW battery output = 2.6 kW home demand; EV charging and water electric backup draw zero",
+    "lighting": "Day"
+  },
+  "pageIntegration": {
+    "dashboard": "Remove car PV canopy, show rooftop PV shared by home and EV, rename shared battery to Home battery, show automatic home-only discharge and reason, replace home battery schedule preview with automatic supply status; clickable Sunny/Cloudy/Rainy dropdown and separate Day/Night toggle in the header",
+    "controlCenter": "Home Auto/Grid/Off; no manual Battery source button; battery status and reserve; remove Battery from EV and water controls; no car PV canopy",
+    "smartScheduler": "EV and water scheduling; no battery source blocks, no battery charge/discharge schedules; EV solar source is rooftop PV",
+    "analytics": "Separate home battery charge/discharge history, home and EV electrical loads, solar thermal output and water grid backup; retain global temperature units",
+    "simulationLab": "Weather presets and actual supply/demand conditions drive automatic battery behavior; EV never consumes home battery power; uses the same environment state as the dashboard selectors"
+  },
+  "designStatus": {
+    "currentDashboard": "11-weather-day-night-controls.png",
+    "note": "Earlier numbered images remain as historical concepts and may show superseded canopy and battery behavior"
+  }
+}

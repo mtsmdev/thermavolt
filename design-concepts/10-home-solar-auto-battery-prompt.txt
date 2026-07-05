@@ -1,0 +1,35 @@
+Generator: built-in image_gen
+
+Use case: ui-mockup / design correction.
+Image 1 is the previous ThermaVoltFlow dashboard to revise. Preserve its dark charcoal style, simplified matte 3D house, solar-thermal water heater, white car and charge post, typography, sidebar, global °C/°F selector, charts and overall layout.
+CRITICAL TOPOLOGY CHANGES:
+1. REMOVE the entire solar canopy above the car, INCLUDING its solar panels, roof and support posts. Keep only the simplified car and its freestanding charging post on the dark background. There are NO solar panels at the EV.
+2. The ONLY photovoltaic array is on the HOUSE ROOF. It supplies the HOME and EV charger. Show a clear unobtrusive connection from the roof PV source toward the EV charger, routed around the water heater. The solar thermal tube heater is separate and must not be connected as an electrical generator.
+3. Rename "Shared battery" to "Home battery". The stationary battery may discharge ONLY INTO THE HOUSE. No battery output line to car, charger, water heater or grid. Use a clear cyan path directed FROM the battery cabinet UP INTO THE HOUSE. This line must not connect to the EV branch. The battery operates automatically when rooftop solar cannot meet home demand, including night and cloudy weather. It has no schedule and is not a manually selected energy source.
+Show a CLOUDY DEMO STATE to explain this automatic behavior:
+- Solar electricity: 1.2 kW
+- Home load: 2.6 kW
+- EV charging: 0.0 kW, status "Paused · low solar"
+- Grid import: 0.0 kW
+- Home battery: 76%, stored7.6 /10kWh, status "Discharging · 1.4 kW"
+- Reserve:20%
+- Water temperature:54°C, electric backup Off
+- EV battery:68%
+- Export surplus:OFF, export0.0kW
+The power balance is 1.2 kW PV +1.4 kW battery =2.6 kW home. The EV currently receives no power. Its rooftop-PV feed connection should be a muted inactive gray dashed path with label "Rooftop solar", NOT a bright active flow. A bright green roof-to-house path represents1.2kW solar; a separate cyan battery-to-house arrow represents1.4kW. Inactive grid paths are dim gray without glow.
+TOP HEADER retains "Energy overview", "DEMO DATA" and °C/°F switch with °C selected. Add a small simple cloud icon and readable badge "Cloudy".
+RIGHT CONTROL COLUMN:
+Home electricity card: segmented options exactly "Auto | Grid | Off" with Auto highlighted green. Supporting text "Solar + battery" and "Automatic home backup". NO "Battery" button and NO Schedule option on this card.
+Water heating card: options "Solar | Grid | Off | Schedule", Solar selected, temperature54°C, electric backup Off. Remove Battery from this card.
+EV charging card: options "Solar | Grid | Off | Schedule", Solar selected, "Paused · low solar", EV battery68% charge bar. Remove Battery from this card.
+Storage card title "Home battery", large76%, stored7.6kWh, capacity10kWh, reserve20%, cyan "Discharging1.4kW"; small badge "AUTO" and helper "Home only".
+Keep Export surplus OFF control.
+Replace the BOTTOM-RIGHT "Schedule preview" panel entirely with "Automatic home supply". It MUST NOT show a schedule, hourly blocks or future battery time windows. Use a clean read-only status panel:
+"Mode  Auto"
+"Weather  Cloudy"
+"Solar available  1.2 kW"
+"Home demand  2.6 kW"
+"Battery supplies  1.4 kW"
+Small explanation: "Battery covers the solar shortfall".
+Preserve the bottom-left daily power chart with green Solar, cyan Battery output and amber Grid series. Battery output can appear at night and during cloudy dips, never label it charging while current-state discharge is illustrated. Use Power · kW axes and00/06/12/18/24 ticks. Preserve the small daily-statistics panel with Solar today28.4kWh, Battery stored7.6kWh, Export today0.0kWh.
+Retain simple uncluttered 3D geometry and high-quality legible UI. Keep the solar thermal heater's horizontal tank and angled tubes. Do not add a different EV roof or extra photovoltaic arrays. No canopy anywhere above the car. No battery scheduling anywhere. Return one complete wide16:10 dashboard screenshot.

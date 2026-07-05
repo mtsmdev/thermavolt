@@ -1,0 +1,14 @@
+Generator: built-in image_gen
+
+Use case: precise-object-edit / ui-mockup.
+Image1 is the approved ThermaVoltFlow dashboard. Extend ONLY its header controls to demonstrate user-selectable mock weather and Day/Night conditions. Preserve the complete dark layout, colors, text, device illustrations, home-only automatic battery behavior, numerical readings, charts, sidebar and existing °C/°F switch.
+The current top weather badge "Cloudy" must become a clickable dropdown trigger: retain the cloud icon and "Cloudy" label, add a clear small down chevron. Show this dropdown OPEN in the screenshot. The compact dark popover is anchored immediately below the weather trigger, with subtle border, soft shadow and three distinct legible menu items:
+sun icon "Sunny"
+cloud icon "Cloudy" with green checkmark to indicate currently selected
+rain-cloud icon "Rainy"
+Use a small popover label "Simulation weather". No extra options. This is an intentional temporary menu overlay; position it neatly so that it does not cover the title or right-side device controls.
+Add a compact two-option segmented switch NEXT TO the weather trigger in the header: sun icon "Day" and moon icon "Night". DAY is selected using the same green active style as existing controls; NIGHT is inactive with a dark fill. Keep this control clearly separate from the °C / °F temperature-unit switch. Header order can be title and DEMO DATA badge, then Day/Night, then Cloudy dropdown, then °C/°F. Use the available header space efficiently; do not cram controls into the title. Slight header spacing adjustments are allowed, but preserve the main panel arrangement.
+The screenshot state is DAY + CLOUDY. Therefore preserve the demo values: rooftop solar1.2kW, home2.6kW, EV0.0kW paused due to low solar, home battery76% and7.6/10kWh DISCHARGING1.4kW, grid0.0kW, water54°C, EV battery68%, exportoff. The current screenshot must NOT show Night selected.
+In the bottom-right "Automatic home supply" card, add a small row "Time of day  Day" beside or just below its Weather Cloudy row, adjusting only internal row spacing to keep all values and the solar-shortfall explanation readable.
+INVARIANTS: the car has NO solar canopy; only the house roof has photovoltaic panels shared with the car. Keep the thermal heater's horizontal tank and angled tubes. The battery supplies only the home automatically; no battery schedule and no battery-to-EV line. Preserve home Auto/Grid/Off and the water/EV Solar/Grid/Off/Schedule controls. No unrelated new UI or decorative scenery.
+Return one complete sharp wide16:10 dashboard screenshot with the weather dropdown visibly open and the Day/Night switch clearly visible.
