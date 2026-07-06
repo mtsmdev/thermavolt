@@ -42,7 +42,7 @@ Weather and day/night are manual simulation conditions. They do not change the s
 | PHP gRPC server | RoadRunner | [`web/grpc-worker.php`](web/grpc-worker.php) |
 | Local persistence | SQLite and Laravel migrations | [`web/database`](web/database) |
 | Tests | PHPUnit and Node's test runner | [`web/tests`](web/tests) |
-| Visual references | Design concepts and application screenshots | [`design-concepts`](design-concepts) |
+| Visual references | Design concepts and application screenshots | [`docs/design-concepts`](docs/design-concepts) |
 
 The browser connects to `http://127.0.0.1:8000`. The gateway forwards page requests to Laravel on port `8001` and converts `/rpc` requests from gRPC-Web into native HTTP/2 gRPC for RoadRunner on port `9001`. PHP validates changes, calculates the simulation, and persists each demo session.
 
@@ -122,7 +122,7 @@ These tests cover simulation rules, request validation, schedule boundaries, ses
 
 The implemented dashboard, including shared rooftop PV, automatic home battery backup, simulation speed controls, and EV reset:
 
-![ThermaVoltFlow application dashboard with PV flows and simulation controls](design-concepts/implemented-simulation-controls.jpg)
+![ThermaVoltFlow application dashboard with PV flows and simulation controls](docs/design-concepts/implemented-simulation-controls.jpg)
 
 ### Original design previews
 
@@ -130,16 +130,16 @@ These images document the visual design process. They are mockups, not captures 
 
 #### Dashboard
 
-![Dashboard design with weather selection, day and night controls, and automatic home battery backup](design-concepts/11-weather-day-night-controls.png)
+![Dashboard design with weather selection, day and night controls, and automatic home battery backup](docs/design-concepts/11-weather-day-night-controls.png)
 
 #### Control Center
 
-![Original Control Center design with device cards and power-source controls](design-concepts/06-control-center.png)
+![Original Control Center design with device cards and power-source controls](docs/design-concepts/06-control-center.png)
 
 #### Smart Scheduler
 
-![Original Smart Scheduler design with recurring energy-source time blocks](design-concepts/07-smart-scheduler.png)
+![Original Smart Scheduler design with recurring energy-source time blocks](docs/design-concepts/07-smart-scheduler.png)
 
 #### Analytics
 
-![Analytics design with energy charts, savings estimates, and export history](design-concepts/08-analytics.png)
+![Analytics design with energy charts, savings estimates, and export history](docs/design-concepts/08-analytics.png)
