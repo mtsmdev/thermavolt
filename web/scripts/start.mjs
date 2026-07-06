@@ -10,7 +10,9 @@ const php =
     (process.platform === "win32" ? path.join(runtime, "php/php.exe") : "php");
 const rr =
     process.env.RR_BINARY ||
-    path.join(runtime, "grpc/roadrunner-3.0.1-windows-amd64/rr.exe");
+    (process.platform === "win32"
+        ? path.join(runtime, "grpc/roadrunner-3.0.1-windows-amd64/rr.exe")
+        : "rr");
 const env = {
     ...process.env,
     PATH: path.dirname(php) + path.delimiter + process.env.PATH,

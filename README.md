@@ -4,7 +4,19 @@ ThermaVoltFlow is an interactive energy dashboard that simulates a home's roofto
 
 The project combines a **Laravel/PHP backend** with a **Svelte/TypeScript frontend**, communicating through **gRPC-Web and native gRPC**. It is an educational application with simulated devices and editable data; no physical hardware or live weather service is required.
 
-**Run locally:** this repository contains the complete frontend and backend. There is no hosted website or online demo. [Screenshots and design previews](#screenshots-and-design-previews) are included at the bottom of this page.
+**Run locally:** this repository contains the complete frontend and backend. [Screenshots and design previews](#screenshots-and-design-previews) are included below.
+
+## Quick start with Docker
+
+Install Docker Desktop or Docker Engine with Compose, then run from the repository root:
+
+```sh
+docker compose up --build -d
+```
+
+Open **http://localhost:8000**. The container builds the frontend, installs PHP dependencies, starts Laravel and gRPC, and creates the SQLite database automatically. The first build can take a few minutes. Check startup with `docker compose logs -f app`, and stop with `docker compose down`. Demo data and the generated application key stay in the `app-data` volume between starts.
+
+The Compose setup binds port `8000` to your computer only. Change the host port in `compose.yaml` if it is already in use. No local PHP, Node, Composer, or RoadRunner installation is needed for this path.
 
 ## Features
 
@@ -44,9 +56,9 @@ Weather and day/night are manual simulation conditions. They do not change the s
 | Tests | PHPUnit and Node's test runner | [`web/tests`](web/tests) |
 | Visual references | Design concepts and application screenshots | [`docs/design-concepts`](docs/design-concepts) |
 
-The browser connects to `http://127.0.0.1:8000`. The gateway forwards page requests to Laravel on port `8001` and converts `/rpc` requests from gRPC-Web into native HTTP/2 gRPC for RoadRunner on port `9001`. PHP validates changes, calculates the simulation, and persists each demo session.
+The browser connects to port `8000`. The gateway forwards page requests to Laravel on internal port `8001` and converts `/rpc` requests from gRPC-Web into native HTTP/2 gRPC for RoadRunner on internal port `9001`. PHP validates changes, calculates the simulation, and persists each demo session.
 
-## Run locally
+## Run without Docker
 
 ### Requirements
 

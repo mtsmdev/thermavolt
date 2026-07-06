@@ -151,8 +151,9 @@ export function createGateway(port = 8000, phpPort = 8001, grpcPort = 9001) {
         });
         call.end(Buffer.concat(chunks));
     });
-    server.listen(port, "127.0.0.1", () =>
-        console.log("ThermaVoltFlow: http://127.0.0.1:" + port),
+    const host = process.env.GATEWAY_HOST || "127.0.0.1";
+    server.listen(port, host, () =>
+        console.log("ThermaVoltFlow: http://" + host + ":" + port),
     );
     return server;
 }
