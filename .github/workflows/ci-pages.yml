@@ -34,6 +34,8 @@ jobs:
         working-directory: web
       - name: Check and test the browser app
         working-directory: web
+        env:
+          LARAVEL_BYPASS_ENV_CHECK: '1'
         run: |
           npm run check
           node --test tests/simulation-runtime.test.mjs
