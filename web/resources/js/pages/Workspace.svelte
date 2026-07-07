@@ -13,8 +13,14 @@
     import Scheduler from "../components/Scheduler.svelte";
     import Analytics from "../components/Analytics.svelte";
     import SimulationLab from "../components/SimulationLab.svelte";
-    let { token = "", view = "dashboard" }: { token?: string; view?: string } =
+    let { token = "", view: initialView = "dashboard" }: { token?: string; view?: string } =
         $props();
+    const staticDemo = import.meta.env.VITE_STATIC_DEMO === "true";
+    let view = $state("dashboard");
+    $effect(() => {
+        if (!staticDemo) view = initialView;
+    });
+    const pageHref = (path: string) => (staticDemo ? "#" + path : path);
     const runtimeState = simulationRuntime.state;
     const simulation = $derived($runtimeState.simulation),
         busy = $derived($runtimeState.busy),
@@ -123,6 +129,18 @@
     }
     onMount(() => {
         void simulationRuntime.connect(token);
+        if (!staticDemo) return;
+        const updateView = () => {
+            const path = window.location.hash.slice(1);
+            view = nav.find((item) => item.url === path)?.id ??
+                (path === "/simulation-lab" ? "simulation-lab" : "dashboard");
+            mobileNav = false;
+        };
+        window.addEventListener("hashchange", updateView);
+        updateView();
+        return () => {
+            window.removeEventListener("hashchange", updateView);
+        };
     });
 </script>
 
@@ -213,28 +231,47 @@
             onclick={() => (mobileNav = false)}
         ></button>{/if}
     <aside class="sidebar" class:mobile-open={mobileNav}>
-        <Link href="/" class="brand">Therma<span>VoltFlow</span></Link>
+        {#if staticDemo}<a href={pageHref("/")} class="brand">Therma<span>VoltFlow</span></a
+            >{:else}<Link href="/" class="brand">Therma<span
+                >VoltFlow</span></Link
+            >{/if}
         <nav aria-label="Main navigation">
-            {#each nav as item}<Link
-                    href={item.url}
-                    class={"nav-item " + (view === item.id ? "selected" : "")}
-                    onclick={() => (mobileNav = false)}
-                    ><Icon
-                        name={item.id === "dashboard" ? "home" : item.icon}
-                        size={26}
-                    /><span>{item.label}</span></Link
-                >{/each}
+            {#each nav as item}
+                {#if staticDemo}<a
+                        href={pageHref(item.url)}
+                        class={"nav-item " + (view === item.id ? "selected" : "")}
+                        onclick={() => (mobileNav = false)}
+                        ><Icon
+                            name={item.id === "dashboard" ? "home" : item.icon}
+                            size={26}
+                        /><span>{item.label}</span></a
+                    >{:else}<Link
+                        href={item.url}
+                        class={"nav-item " + (view === item.id ? "selected" : "")}
+                        onclick={() => (mobileNav = false)}
+                        ><Icon
+                            name={item.id === "dashboard" ? "home" : item.icon}
+                            size={26}
+                        /><span>{item.label}</span></Link
+                    >{/if}
+            {/each}
         </nav>
         <div class="sidebar-bottom">
-            <Link
-                href="/simulation-lab"
-                class={"nav-item " +
-                    (view === "simulation-lab" ? "selected" : "")}
-                onclick={() => (mobileNav = false)}
-                ><Icon name="lab" size={23} /><span>Simulation Lab</span></Link
-            ><span class="sidebar-connection"
+            {#if staticDemo}<a
+                    href={pageHref("/simulation-lab")}
+                    class={"nav-item " +
+                        (view === "simulation-lab" ? "selected" : "")}
+                    onclick={() => (mobileNav = false)}
+                    ><Icon name="lab" size={23} /><span>Simulation Lab</span></a
+                >{:else}<Link
+                    href="/simulation-lab"
+                    class={"nav-item " +
+                        (view === "simulation-lab" ? "selected" : "")}
+                    onclick={() => (mobileNav = false)}
+                    ><Icon name="lab" size={23} /><span>Simulation Lab</span></Link
+                >{/if}<span class="sidebar-connection"
                 ><i class:offline={!connected}></i>{connected
-                    ? "Simulation online"
+                    ? staticDemo ? "Browser demo ready" : "Simulation online"
                     : "Connecting…"}</span
             >
         </div>
@@ -370,7 +407,7 @@
                         ><i
                             class="connection-dot"
                             class:disconnected={!connected}
-                        ></i>gRPC {connected
+                        ></i>{staticDemo ? "Browser demo" : "gRPC"} {connected
                             ? "connected"
                             : "disconnected"}</span
                     >

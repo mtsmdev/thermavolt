@@ -67,12 +67,17 @@
         <section class="panel power-panel">
             <div class="panel-heading">
                 <h3>Daily power <span>(24 hours)</span></h3>
-                <Link
-                    href="/analytics"
-                    class="chart-more"
-                    aria-label="View energy analytics"
-                    ><Icon name="arrow" size={18} /></Link
-                >
+                {#if import.meta.env.VITE_STATIC_DEMO === "true"}<a
+                        href="#/analytics"
+                        class="chart-more"
+                        aria-label="View energy analytics"
+                        ><Icon name="arrow" size={18} /></a
+                    >{:else}<Link
+                        href="/analytics"
+                        class="chart-more"
+                        aria-label="View energy analytics"
+                        ><Icon name="arrow" size={18} /></Link
+                    >{/if}
             </div>
             <PowerChart readings={simulation.readings} />
         </section>

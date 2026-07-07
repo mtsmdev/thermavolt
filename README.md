@@ -4,7 +4,7 @@ ThermaVoltFlow is an interactive energy dashboard that simulates a home's roofto
 
 The project combines a **Laravel/PHP backend** with a **Svelte/TypeScript frontend**, communicating through **gRPC-Web and native gRPC**. It is an educational application with simulated devices and editable data; no physical hardware or live weather service is required.
 
-**Run locally:** this repository contains the complete frontend and backend. [Screenshots and design previews](#screenshots-and-design-previews) are included below.
+**[Try the interactive demo](https://mtsmdev.github.io/thermavolt/)** in your browser, or run the complete application locally. The Pages demo uses sample history and a lightweight browser simulation; its controls and playback work without a server. It saves your demo state in this browser. The Docker setup runs the Laravel and gRPC services with SQLite persistence. [Screenshots and design previews](#screenshots-and-design-previews) are included below.
 
 ## Quick start with Docker
 
@@ -48,6 +48,7 @@ Weather and day/night are manual simulation conditions. They do not change the s
 | Layer | Technology | Location |
 | --- | --- | --- |
 | Interface | Svelte 5, TypeScript, Vite, Inertia | [`web/resources/js`](web/resources/js) |
+| Static demo | Browser-side sample state for GitHub Pages | [`web/demo`](web/demo) |
 | Application and simulation | Laravel 13, PHP | [`web/app`](web/app) |
 | API contract | Protocol Buffers and gRPC | [`web/proto/energy.proto`](web/proto/energy.proto) |
 | Browser API transport | Binary gRPC-Web through a Node gateway | [`web/scripts/gateway.mjs`](web/scripts/gateway.mjs) |

@@ -201,11 +201,17 @@
                     Powered by shared rooftop PV or the utility grid.
                 </p>
             {/if}
-            {#if device.id !== "home"}<Link
-                    href="/smart-scheduler"
-                    class="text-link control-schedule"
-                    >Edit schedule<Icon name="arrow" size={18} /></Link
-                >{/if}
+            {#if device.id !== "home"}
+                {#if import.meta.env.VITE_STATIC_DEMO === "true"}<a
+                        href="#/smart-scheduler"
+                        class="text-link control-schedule"
+                        >Edit schedule<Icon name="arrow" size={18} /></a
+                    >{:else}<Link
+                        href="/smart-scheduler"
+                        class="text-link control-schedule"
+                        >Edit schedule<Icon name="arrow" size={18} /></Link
+                    >{/if}
+            {/if}
         </section>
     {/each}
 </div>
