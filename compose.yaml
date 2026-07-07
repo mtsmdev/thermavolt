@@ -8,7 +8,8 @@ services:
       APP_ENV: local
       APP_DEBUG: "false"
       APP_URL: http://localhost:8000
-      LOG_CHANNEL: stderr
+      LOG_CHANNEL: stack
+      LOG_STACK: stderr,single
       DB_CONNECTION: sqlite
       DB_DATABASE: /data/database.sqlite
       SESSION_DRIVER: database

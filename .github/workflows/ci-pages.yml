@@ -54,7 +54,9 @@ jobs:
           node --test tests/grpc.test.mjs
       - name: Show container logs on failure
         if: failure()
-        run: docker compose logs app
+        run: |
+          docker compose logs app
+          docker compose exec -T app sh -c 'for log in storage/logs/*.log; do if [ -f "$log" ]; then tail -n 100 "$log"; fi; done'
       - name: Configure Pages
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         uses: actions/configure-pages@v5
