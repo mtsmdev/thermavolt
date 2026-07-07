@@ -1,0 +1,79 @@
+name: Test and deploy demo
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: pdo_sqlite, sockets
+          coverage: none
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Install PHP dependencies
+        run: composer install --no-interaction --prefer-dist
+        working-directory: web
+      - name: Run PHP tests
+        run: php vendor/bin/phpunit
+        working-directory: web
+      - name: Install browser dependencies
+        run: npm ci
+        working-directory: web
+      - name: Check and test the browser app
+        working-directory: web
+        run: |
+          npm run check
+          node --test tests/simulation-runtime.test.mjs
+          npm run build
+          npm run build:demo
+      - name: Start the Docker demo
+        run: docker compose up --build -d
+      - name: Check the HTTP and gRPC paths
+        working-directory: web
+        run: |
+          for attempt in $(seq 1 60); do
+            if curl --fail --silent http://127.0.0.1:8000/up > /dev/null; then break; fi
+            sleep 2
+          done
+          curl --fail http://127.0.0.1:8000/up
+          node --test tests/grpc.test.mjs
+      - name: Show container logs on failure
+        if: failure()
+        run: docker compose logs app
+      - name: Configure Pages
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/configure-pages@v5
+      - name: Upload Pages files
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: web/dist/demo
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy the interactive demo
+        id: deployment
+        uses: actions/deploy-pages@v4

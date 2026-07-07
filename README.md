@@ -18,6 +18,8 @@ Open **http://localhost:8000**. The container builds the frontend, installs PHP 
 
 The Compose setup binds port `8000` to your computer only. Change the host port in `compose.yaml` if it is already in use. No local PHP, Node, Composer, or RoadRunner installation is needed for this path.
 
+Every push runs the PHP, browser, and Docker smoke tests in [GitHub Actions](.github/workflows/ci-pages.yml). Passing pushes to `main` also publish the browser demo to GitHub Pages.
+
 ## Features
 
 | Page | What you can do |
